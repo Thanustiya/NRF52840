@@ -1,0 +1,77 @@
+body {
+  background-color: #2C5B9C;
+}
+
+.bg-faded {
+  background-color: white;
+}
+
+.dropdown-header {
+  background-color: rgba(211, 216, 0, 0.5);
+  font-weight: bold;
+}
+
+.jumbotron {
+  background-color: white; 
+}
+
+.hint {
+  padding-left: 2em;
+  padding-right: 0.5em;
+  font-size: x-small;  
+}
+
+.textBlock {
+  padding: 1em 4em 1em 4em;
+}
+
+.content {
+  padding: 2em 4em 1em 6em;
+}
+
+#contentLine {
+  padding: 0.3em 0.3em 0.3em 0.8em;
+}
+
+#PointerDown { background: url(RedRDown.gif) no-repeat; }
+#PointerUp { background: url(GreenRUp.gif) no-repeat; }
+#PointerRight { background: url(WhiteR.gif) no-repeat; }
+
+
+#navigation {
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+  min-width: 400px;    
+  /* min-width: 992px;  */ 
+  /* Navigation is smoother in case of smaller browser tabs if we do not set the same minimum width for the navbar as fot the main content. */
+}
+
+#brand {
+  font-weight: bolder;
+}
+
+#containerNavbar {
+  font-weight: bold;
+}
+
+#contentMain {
+  min-width: 992px;
+}
+
+#tableArea {
+  padding: 1em 4em 1em 4em;
+}
+
+#footer {
+  padding: 1em 4em 1em 4em;
+}
+
+#links {
+  padding-top: 2em;
+  padding-left: 2em;  
+  padding-bottom: 2em;
+}
+
+#prodLogo {
+  padding: 1em 4em 1em 4em;
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>SEGGER Webserver demo</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap_min_css.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="Custom.css" rel="stylesheet">
+    <script src="js/events.js"></script>
+  </head>
+
+  <body onload="_UpdateFormFields()">
+    <div class="container">
+      <!--            -->
+      <!-- Navigation -->
+      <!--            -->
+      <nav class="navbar navbar-light bg-faded rounded navbar-toggleable-md" id="navigation">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#containerNavbar" aria-controls="containerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <span class="navbar-brand" id="brand">emWeb |</span>
+        <div class="collapse navbar-collapse" id="containerNavbar">
+          <ul class="navbar-nav mr-auto" id="navList">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.htm">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <!--#exec cgi="GetConfigMenuItem"-->
+            <li class="nav-item dropdown">
+              <!--#exec cgi="GetDropdown"-->
+            </li>
+          </ul>
+          <div class="navbar-text" id="LOG_SysUptime"></div>
+          <!--
+          <form class="form-inline my-2 my-sm-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          -->
+        </div>
+      </nav>
+      <!--         -->
+      <!-- Content -->
+      <!--         -->
+      <div class="jumbotron jumbotron-fluid" id="contentMain">
+        <div class="row" id="row01">
+          <div class="col-sm-4 mx-auto" id="prodLogo">
+            <img src="emWeb_Logo.png" class="img-responsive" alt="emWeb product logo">
+          </div> <!-- prodLogo -->
+          <div class="col-sm-8">
+            <!--#exec cgi="GetIPAddrInfo"-->
+            <div class="row" id="LOG_ConnectionCnt"></div> <!-- LOG_ConnectionCnt -->
+          </div> <!-- col-sm-8 -->
+        </div>  <!-- row01 -->
+
+
+
+
+
+        <script type="text/javascript">
+          function _UpdateFormFields() {
+            var DHCPActive;
+
+            for (i=0; i < document.IPConfig.AssignIPv4ConfigType.length; i++) {
+              if (document.IPConfig.AssignIPv4ConfigType[i].checked) {
+                DHCPActive = document.IPConfig.AssignIPv4ConfigType[i].value;
+              }
+            }
+            if (DHCPActive == 1) {
+              document.IPConfig.IPAddr_0.disabled    = true;
+              document.IPConfig.IPAddr_1.disabled    = true;
+              document.IPConfig.IPAddr_2.disabled    = true;
+              document.IPConfig.IPAddr_3.disabled    = true;
+              document.IPConfig.IPMask_0.disabled    = true;
+              document.IPConfig.IPMask_1.disabled    = true;
+              document.IPConfig.IPMask_2.disabled    = true;
+              document.IPConfig.IPMask_3.disabled    = true;
+              document.IPConfig.IPGateway_0.disabled = true;
+              document.IPConfig.IPGateway_1.disabled = true;
+              document.IPConfig.IPGateway_2.disabled = true;
+              document.IPConfig.IPGateway_3.disabled = true;
+            } else {
+              document.IPConfig.IPAddr_0.disabled    = false;
+              document.IPConfig.IPAddr_1.disabled    = false;
+              document.IPConfig.IPAddr_2.disabled    = false;
+              document.IPConfig.IPAddr_3.disabled    = false;
+              document.IPConfig.IPMask_0.disabled    = false;
+              document.IPConfig.IPMask_1.disabled    = false;
+              document.IPConfig.IPMask_2.disabled    = false;
+              document.IPConfig.IPMask_3.disabled    = false;
+              document.IPConfig.IPGateway_0.disabled = false;
+              document.IPConfig.IPGateway_1.disabled = false;
+              document.IPConfig.IPGateway_2.disabled = false;
+              document.IPConfig.IPGateway_3.disabled = false;
+            }
+          }
+        </script>
+
+
+        <div class="content">
+          <h2>IP Configuration</h2>
+          <hr>
+          <form name="IPConfig" action="" method="POST">
+            <div class="row">
+              <div class="col-sm-12">
+                <b>IPv4 Configuration:</b>
+              </div>
+            </div>
+            <div class="row" id="contentLine">
+              <div class="col-sm-12">
+                <input onchange="_UpdateFormFields()" type="radio" name="AssignIPv4ConfigType" value="1" <!--#exec cgi="AssignIPType_Auto"-->><b>Automatic (DHCP)</b>
+              </div>
+            </div>
+            <div class="row" id="contentLine">
+              <div class="col-sm-12">
+                <input onchange="_UpdateFormFields()" type="radio" name="AssignIPv4ConfigType" value="0" <!--#exec cgi="AssignIPType_Manual"-->><b>Manual</b>
+              </div>
+            </div>
+            <div class="row" id="contentLine">
+              <div class="col-sm-4">
+                <b>IP address:</b>
+              </div>
+              <div class="col-sm-8">
+                <input name="IPAddr_0" type="text" size="2" maxlength="3" value="<!--#exec cgi="IPAddr_0"-->">.
+                <input name="IPAddr_1" type="text" size="2" maxlength="3" value="<!--#exec cgi="IPAddr_1"-->">.
+                <input name="IPAddr_2" type="text" size="2" maxlength="3" value="<!--#exec cgi="IPAddr_2"-->">.
+                <input name="IPAddr_3" type="text" size="2" maxlength="3" value="<!--#exec cgi="IPAddr_3"-->">
+              </div>
+            </div>
+            <div class="row" id="contentLine">
+              <div class="col-sm-4">
+                <b>Subnet mask:</b>
+              </div>
+              <div class="col-sm-8">
+                <input name="IPMask_0" type="text" size="2" maxlength="3" value="<!--#exec cgi="IPMask_0"-->">.
+                <input name="IPMask_1" type="text" size="2" maxlength="3" value="<!--#exec cgi="IPMask_1"-->">.
+                <input name="IPMask_2" type="text" size="2" maxlength="3" value="<!--#exec cgi="IPMask_2"-->">.
+                <input name="IPMask_3" type="text" size="2" maxlength="3" value="<!--#exec cgi="IPMask_3"-->">
+              </div>
+            </div>
+            <div class="row" id="contentLine">
+              <div class="col-sm-4">
+                <b>Gateway</b>
+              </div>
+              <div class="col-sm-8">
+                <input name="IPGateway_0" type="text" size="2" maxlength="3" value="<!--#exec cgi="IPGateway_0"-->">.
+                <input name="IPGateway_1" type="text" size="2" maxlength="3" value="<!--#exec cgi="IPGateway_1"-->">.
+                <input name="IPGateway_2" type="text" size="2" maxlength="3" value="<!--#exec cgi="IPGateway_2"-->">.
+                <input name="IPGateway_3" type="text" size="2" maxlength="3" value="<!--#exec cgi="IPGateway_3"-->">
+              </div>
+            </div>
+            <div class="row" id="contentLine">
+              <div class="col-sm-12">
+                <input type="submit" value="Apply" name = "SetIP">
+              </div>
+            </div>
+          </form>
+        </div>
+
+
+        <script>
+          if(typeof(EventSource) !== "undefined") {
+            var conn = new EventSource("SSEGetConnInfo.cgi");
+            //
+            //
+            //
+            function _ShowConnectionCnt(event) {
+              document.getElementById("LOG_ConnectionCnt").innerHTML = event.data;
+            };
+            function _ShowSSEUpdates(event) {
+              document.getElementById("LOG_SSEUpdates").innerHTML = event.data;
+            };
+            function _ShowSysUptime(event) {
+              document.getElementById("LOG_SysUptime").innerHTML = event.data;
+            };
+            //
+            //
+            //
+            conn.addEventListener('LOG_ConnectionCnt',  _ShowConnectionCnt);
+            conn.addEventListener('LOG_SSEUpdates',     _ShowSSEUpdates);
+            conn.addEventListener('LOG_SysUptime',      _ShowSysUptime);
+          } else {
+            document.getElementById("LOG_ConnectionInfo").innerHTML = "Sorry, your browser does not support Server-Sent Events (SSE)...";
+          }
+        </script>
+
+        <div class="row">
+          <div class="col-sm-6" id="footer">
+            <img src="Logo.gif"  class="img-responsive" alt="SEGGER company logo">
+          </div> <!-- Logo -->
+          <div class="col-sm-6 text-right" id="footer">
+            <!--#exec cgi="Counter"-->
+            <br><span class="hint" id="LOG_SSEUpdates"></span>
+          </div> <!-- footer -->
+        </div>  <!-- row -->
+      </div> <!-- Jumbotron -->
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery_min_js.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery_min_js.js"><\/script>')</script>
+    <script src="js/tether_min_js.js"></script>
+    <script src="js/bootstrap_min_js.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<!--    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>  -->
+  </body>
+</html>

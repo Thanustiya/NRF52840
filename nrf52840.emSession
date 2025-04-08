@@ -1,0 +1,50 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints"/>
+ <ExecutionProfileWindow/>
+ <FrameBuffer/>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="nrf52840"/>
+  <ProjectSessionItem path="nrf52840;nrf52840"/>
+  <ProjectSessionItem path="nrf52840;nrf52840;Application"/>
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never"/>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="175" useTextEdit="1" path="Application/Main.c" left="0" selected="1" top="136" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="45" useTextEdit="1" path="D:/nRF5_SDK_17.1.0/components/drivers_nrf/uart/nrf_uart.h" left="0" top="33" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="39" useTextEdit="1" path="D:/nRF5_SDK_17.1.0/modules/nrfx/drivers/include/nrfx.h" left="0" top="4" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="47" useTextEdit="1" path="D:/nRF5_SDK_17.1.0/modules/nrfx/drivers/include/nrfx_config.h" left="0" top="8" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="9" y="47" useTextEdit="1" path="D:/nRF5_SDK_17.1.0/modules/nrfx/drivers/nrfx_common.h" left="0" top="28" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="42" useTextEdit="1" path="D:/nRF5_SDK_17.1.0/modules/nrfx/nrfx.h" left="0" top="10" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="30" y="53" useTextEdit="1" path="D:/nRF5_SDK_17.1.0/components/libraries/uart/app_uart.h" left="0" top="33" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="22" y="25" useTextEdit="1" path="D:/nRF5_SDK_17.1.0/components/toolchain/gcc/app_error.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="10" y="44" useTextEdit="1" path="D:/nRF5_SDK_17.1.0/modules/nrfx/drivers/include/nrfx_uart.h" left="0" top="5" codecName="Default"/>
+ </Files>
+ <EMStudioWindow activeProject="nrf52840" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
+</session>

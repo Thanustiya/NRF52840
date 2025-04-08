@@ -1,0 +1,896 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="nrf52840" version="2" target="8">
+  <configuration
+    Name="Common"
+    c_user_include_directories="D:\\nRF5_SDK_17.1.0\\components\\drivers_nrf\\delay;D:\\nRF5_SDK_17.1.0\\components\\drivers_nrf\\uart;D:\\nRF5_SDK_17.1.0\\modules\\nrfx\\drivers;D:\\nRF5_SDK_17.1.0\\modules\\nrfx\\soc;D:\\nRF5_SDK_17.1.0\\modules\\nrfx\\mdk;D:\\nRF5_SDK_17.1.0\\modules\\nrfx\\doc;D:\\nRF5_SDK_17.1.0\\modules\\nrfx\\drivers\\src;D:\\nRF5_SDK_17.1.0\\modules\\nrfx\\drivers\\include;D:\\nRF5_SDK_17.1.0\\modules\\nrfx\\hal;D:\\nRF5_SDK_17.1.0\\modules\\nrfx\\helpers;D:\\nRF5_SDK_17.1.0\\modules\\nrfx\\templates\\nRF52840;D:\\nRF5_SDK_17.1.0\\modules\\nrfx\\templates;D:\\nRF5_SDK_17.1.0\\components\\libraries\\uart;D:\\nRF5_SDK_17.1.0\\components\\toolchain\\gcc;D:\\nRF5_SDK_17.1.0\\components\\boards" />
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG"
+    gcc_debugging_level="Level 3"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="None" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_debugging_level="Level 2"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="Level 2 balanced" />
+  <project Name="nrf52840">
+    <configuration
+      IOT2Proj="Yes"
+      LIBRARY_IO_TYPE="RTT"
+      Name="Common"
+      SEGGER2Proj="Yes"
+      arm_architecture="v7EM"
+      arm_compiler_variant="SEGGER"
+      arm_core_type="Cortex-M4"
+      arm_endian="Little"
+      arm_fp_abi="SoftFP"
+      arm_fpu_type="FPv4-SP-D16"
+      arm_linker_allow_multiple_definition="No"
+      arm_linker_heap_size="1280"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="1024"
+      arm_linker_variant="SEGGER"
+      arm_target_device_name="nRF52840_xxAA"
+      arm_target_interface_type="SWD"
+      build_intermediate_directory="$(ProjectDir)/Output/$(Configuration)/Obj"
+      build_output_directory="$(ProjectDir)/Output/$(Configuration)"
+      c_only_additional_options="-Wmissing-prototypes"
+      c_preprocessor_definitions="USE_RTT=1;NRF52840_XXAA;ARM_MATH_CM4;FLASH_PLACEMENT=1;RTT_USE_ASM=1"
+      c_user_include_directories="$(PackagesDir)/ESPRO/;$(ProjectDir)/OS/Setup/CoreSupport/;$(ProjectDir)/OS/Setup/DeviceSupport/;$(ProjectDir)/OS/Setup/;$(ProjectDir)/GUI/Setup/;D:\\nRF5_SDK_17.1.0\\modules\\nrfx\\drivers;D:\\nRF5_SDK_17.1.0\\components\\drivers_nrf\\uart;D:\\nRF5_SDK_17.1.0\\modules\\nrfx\\drivers\\include;D:\\nRF5_SDK_17.1.0\\modules\\nrfx\\drivers"
+      debug_register_definition_file="$(ProjectDir)/OS/Setup/nrf52840.svd"
+      debug_target_connection="J-Link"
+      debug_threads_script="$(ProjectDir)/OS/Generic/embOSPlugin.js"
+      emCompress2Proj="Yes"
+      emCrypt2Proj="Yes"
+      emFile2Proj="Yes"
+      emFileLockLevel="Use single lock"
+      emModbus2Proj="Yes"
+      emSSH2Proj="Yes"
+      emSSL2Proj="Yes"
+      emSecure2Proj="Yes"
+      emUSBD2Proj="Yes"
+      emUSBH2Proj="No"
+      emWebSample="Full Bootstrap Website"
+      emWin2LogicalColor="ARGB"
+      emWin2Proj="No"
+      embOS2Proj="Yes"
+      embOS837070="No"
+      embOSIP2Proj="Yes"
+      gcc_enable_all_warnings="Yes"
+      gcc_entry_point="Reset_Handler"
+      link_linker_script_file="$(ProjectDir)/OS/Setup/ses_nrf52840_xxaa.icf"
+      linker_memory_map_file="$(ProjectDir)/OS/Setup/nRF52840_xxAA_MemoryMap.xml"
+      linker_output_format="srec"
+      linker_printf_fmt_level="long"
+      linker_printf_fp_enabled="Yes"
+      linker_printf_width_precision_supported="Yes"
+      linker_scanf_fp_enabled="Yes"
+      project_directory=""
+      project_type="Executable"
+      target_reset_script="Reset();"
+      target_script_file="$(ProjectDir)/OS/Setup/nRF_Target.js" />
+    <configuration
+      IOTLibMode="Debug build (d)"
+      Name="Debug"
+      SEGGERLibMode="Debug build (d)"
+      c_preprocessor_definitions="DEBUG;NRF52840_XXAA"
+      emCompressLibMode="Debug build (d)"
+      emCryptLibMode="Debug build (d)"
+      emFileLibMode="Debug build (d)"
+      emModbusLibMode="Debug build (d)"
+      emSSHLibMode="Debug build (d)"
+      emSSLLibMode="Debug build (d)"
+      emSecureLibMode="Debug build (d)"
+      emUSBDLibMode="Debug build (d)"
+      emUSBHLibMode="Debug build (d)"
+      emWinLibMode="Debug build (d)"
+      embOSIPLibMode="Debug build (d)"
+      embOSLibMode="Debug build with profiling (dp)"
+      gcc_debugging_level="Level 3"
+      gcc_optimization_level="None" />
+    <configuration
+      IOTLibMode="Release build (r)"
+      Name="Release"
+      SEGGERLibMode="Release build (r)"
+      c_preprocessor_definitions="NDEBUG"
+      emCompressLibMode="Release build (r)"
+      emCryptLibMode="Release build (r)"
+      emFileLibMode="Release build (r)"
+      emModbusLibMode="Release build (r)"
+      emSSHLibMode="Release build (r)"
+      emSSLLibMode="Release build (r)"
+      emSecureLibMode="Release build (r)"
+      emUSBDLibMode="Release build (r)"
+      emUSBHLibMode="Release build (r)"
+      emWinLibMode="Release build (r)"
+      embOSIPLibMode="Release build (r)"
+      embOSLibMode="Release build (r)"
+      gcc_debugging_level="Level 3"
+      gcc_optimization_level="Level 2" />
+    <folder Name="Application">
+      <folder Name="COMPRESS - Excluded">
+        <configuration Name="Common" build_exclude_from_build="Yes" />
+        <file file_name="$(ProjectDir)/Application/COMPRESS/CTG_BenchDecode.c" />
+        <file file_name="$(ProjectDir)/Application/COMPRESS/CTG_BenchEncode.c" />
+        <file file_name="$(ProjectDir)/Application/COMPRESS/CTG_Blog_Compressed.h" />
+        <file file_name="$(ProjectDir)/Application/COMPRESS/CTG_Blog_Uncompressed.h" />
+        <file file_name="$(ProjectDir)/Application/COMPRESS/CTG_F2M_Decode.c" />
+        <file file_name="$(ProjectDir)/Application/COMPRESS/CTG_F2M_Encode.c" />
+        <file file_name="$(ProjectDir)/Application/COMPRESS/CTG_M2F_Decode.c" />
+        <file file_name="$(ProjectDir)/Application/COMPRESS/CTG_M2F_Encode.c" />
+        <file file_name="$(ProjectDir)/Application/COMPRESS/CTG_M2M_Decode.c" />
+        <file file_name="$(ProjectDir)/Application/COMPRESS/CTG_M2M_Encode.c" />
+      </folder>
+      <folder Name="CRYPTO - Excluded">
+        <configuration Name="Common" build_exclude_from_build="Yes" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Bench_AES.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Bench_Camellia.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Bench_DES.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Bench_ECDH.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Bench_ECDSA.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Bench_EdDSA.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Bench_MD5.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Bench_ModExp.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Bench_PointMul.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Bench_RIPEMD160.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Bench_RNG.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Bench_SHA1.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Bench_SHA256.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Bench_SHA3.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Bench_SHA512.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Demo_ECDSA_Sign_P256_MinSize.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Demo_ECDSA_Verify_P256_MinSize.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Demo_EdDSA_Sign_MinSize.c" />
+        <file file_name="$(ProjectDir)/Application/CRYPTO/CRYPTO_Demo_SHA256.c" />
+      </folder>
+      <folder Name="FS - Excluded">
+        <configuration Name="Common" build_exclude_from_build="Yes" />
+        <file file_name="$(ProjectDir)/Application/FS/FS_CheckDisk.c" />
+        <file file_name="$(ProjectDir)/Application/FS/FS_Commander.c" />
+        <file file_name="$(ProjectDir)/Application/FS/FS_DeviceActivity.c" />
+        <file file_name="$(ProjectDir)/Application/FS/FS_DirOperations.c" />
+        <file file_name="$(ProjectDir)/Application/FS/FS_FileEncryption.c" />
+        <file file_name="$(ProjectDir)/Application/FS/FS_Performance.c" />
+        <file file_name="$(ProjectDir)/Application/FS/FS_PerformanceSimple.c" />
+        <file file_name="$(ProjectDir)/Application/FS/FS_SectorCache.c" />
+        <file file_name="$(ProjectDir)/Application/FS/FS_Start.c" />
+        <file file_name="$(ProjectDir)/Application/FS/FS_STORAGE_Start.c" />
+      </folder>
+      <folder Name="IOT - Excluded">
+        <configuration Name="Common" build_exclude_from_build="Yes" />
+        <file file_name="$(ProjectDir)/Application/IOT/IOT_HTTP_AuthGetRequest.c" />
+        <file file_name="$(ProjectDir)/Application/IOT/IOT_HTTP_GetRequest.c" />
+        <file file_name="$(ProjectDir)/Application/IOT/IOT_HTTP_RedirectRequest.c" />
+        <file file_name="$(ProjectDir)/Application/IOT/IOT_HTTP_SecureGet.c" />
+        <file file_name="$(ProjectDir)/Application/IOT/IOT_HTTP_TestDigestAuth.c" />
+        <file file_name="$(ProjectDir)/Application/IOT/IOT_JSON_IncrementalParse.c" />
+        <file file_name="$(ProjectDir)/Application/IOT/IOT_JSON_MakeTree.c" />
+        <file file_name="$(ProjectDir)/Application/IOT/IOT_JSON_PlainTrace.c" />
+        <file file_name="$(ProjectDir)/Application/IOT/IOT_JSON_PrettyTrace.c" />
+      </folder>
+      <folder Name="IP - Excluded">
+        <configuration Name="Common" build_exclude_from_build="Yes" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_ACD_Start.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_AUTOIP_Start.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_COAP_ClientSample.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_COAP_ServerSample.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_DHCPServer.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_DNSClient.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_FTPClientSample.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_FTPClientSample_Secure.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_FTPServerSample.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_MDNS_ServerSample.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_MQTT_CLIENT_Publisher.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_MQTT_CLIENT_PublisherSubscriber_2Tasks.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_MQTT_CLIENT_Subscriber.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_NETBIOS_Start.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_NonBlockingConnect.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_NTPClient.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_Ping.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_SendMail.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_SendMail_Secure.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_SHELL_Start.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_SimpleServer.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_SimpleServer_IPv6.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_SimpleServer_select_IPv4_IPv6.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_SNTPClient.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_SpeedClient_TCP.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_SpeedClient_TCP_ZeroCopy.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_Start.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_TCP_TasklessServer.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_TFTPClientSample.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_TFTPServerSample.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_UDPDiscover.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_UDPDiscover_ZeroCopy.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_VLAN_Start.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_WebserverSample.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_WebserverSample_IPv4_IPv6_SSL.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_WebserverSample_IPv6.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_WebserverSample_Secure.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_WebserverSample_select_IPv4_IPv6.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_WebserverSample_SingleTask_IPv4_IPv6.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_WebserverSample_UPnP.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_WebserverSample_WEBSOCKET_printf_Server.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_WEBSOCKET_printf_Client.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_WEBSOCKET_printf_Server.c" />
+        <file file_name="$(ProjectDir)/Application/IP/IP_WIFI_Scan.c" />
+      </folder>
+      <folder Name="MB - Excluded">
+        <configuration Name="Common" build_exclude_from_build="Yes" />
+        <file file_name="$(ProjectDir)/Application/MB/MB_MASTER_TCPSample.c" />
+        <file file_name="$(ProjectDir)/Application/MB/MB_SLAVE_TCPSample.c" />
+        <file file_name="$(ProjectDir)/Application/MB/MB_SLAVE_TCPSample_SingleTaskMultiClient.c" />
+      </folder>
+      <folder Name="OS - Excluded">
+        <configuration Name="Common" build_exclude_from_build="Yes" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_EventObjects.c" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_ExtendedTask.c" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_ExtendTaskContext.c" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_Mailboxes.c" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_MeasureCPU_Performance.c" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_MeasureCST_HRTimer_embOSView.c" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_MeasureCST_HRTimer_Printf.c" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_MeasureCST_Scope.c" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_Mutexes.c" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_ObjectIdentifier.c" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_Queues.c" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_Semaphores.c" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_Start2Tasks.c" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_Start2Tasks.cpp" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_Start2TasksEx.c" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_SWTimer.c" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_TaskStartHook.c" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_ThreadLocalStorage.c" />
+        <file file_name="$(ProjectDir)/Application/OS/OS_Watchdog.c" />
+      </folder>
+      <folder Name="SECURE - Excluded">
+        <configuration Name="Common" build_exclude_from_build="Yes" />
+        <file file_name="$(ProjectDir)/Application/SECURE/SECURE_ECDSA_Bench_Performance.c" />
+        <file file_name="$(ProjectDir)/Application/SECURE/SECURE_ECDSA_Bench_Sign.c" />
+        <file file_name="$(ProjectDir)/Application/SECURE/SECURE_ECDSA_Bench_Verify.c" />
+        <file file_name="$(ProjectDir)/Application/SECURE/SECURE_RSA_Bench_Performance.c" />
+        <file file_name="$(ProjectDir)/Application/SECURE/SECURE_RSA_Bench_Sign.c" />
+        <file file_name="$(ProjectDir)/Application/SECURE/SECURE_RSA_Bench_Verify.c" />
+      </folder>
+      <folder Name="SSH - Excluded">
+        <configuration Name="Common" build_exclude_from_build="Yes" />
+        <file file_name="$(ProjectDir)/Application/SSH/SSH_SCP_FS_Server.c" />
+        <file file_name="$(ProjectDir)/Application/SSH/SSH_Shell1.c" />
+        <file file_name="$(ProjectDir)/Application/SSH/SSH_Shell2.c" />
+        <file file_name="$(ProjectDir)/Application/SSH/SSH_Shell3.c" />
+        <file file_name="$(ProjectDir)/Application/SSH/SSH_Shell5.c" />
+      </folder>
+      <folder Name="SSL - Excluded">
+        <configuration Name="Common" build_exclude_from_build="Yes" />
+        <file file_name="$(ProjectDir)/Application/SSL/SSL_OS_Scan.c" />
+        <file file_name="$(ProjectDir)/Application/SSL/SSL_OS_SimpleWebClient.c" />
+        <file file_name="$(ProjectDir)/Application/SSL/SSL_OS_SimpleWebServer.c" />
+        <file file_name="$(ProjectDir)/Application/SSL/SSL_ROT13Client.c" />
+        <file file_name="$(ProjectDir)/Application/SSL/SSL_ROT13Server.c" />
+      </folder>
+      <folder Name="USBD - Excluded">
+        <configuration Name="Common" build_exclude_from_build="Yes" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_Audio_Speaker_Microphone.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_Audio_Speaker_Microphone_SmallFootprint.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_BULK_ShowDeviceState.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_BULK_Test.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_BULK_Webserver.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_CDC_Echo.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_HID_Echo1.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_HID_Keyboard.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_HID_Keyboard_Mouse.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_HID_MMControl.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_HID_Mouse.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_HID_Mouse_Echo1.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_MSD_CDROM_FS_Start.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_MSD_CDROM_Start.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_MSD_FS_DisconnectOnWrite.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_MSD_FS_Start.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_MSD_FS_WriteOnDisconnect.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_MSD_Start_StorageRAM.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_MTP_Start.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_Printer.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_Printer_ReadWrite.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_UVC_Start.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_VirtualMSD_CRC.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_VirtualMSD_Start.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_VSC_Sample.c" />
+        <file file_name="$(ProjectDir)/Application/USBD/USB_VSC_Start.c" />
+      </folder>
+      <file file_name="$(ProjectDir)/Application/Main.c" />
+      <file file_name="$(ProjectDir)/Application/OS/OS_StartLEDBlink.c" />
+    </folder>
+    <folder Name="COMPRESS">
+      <folder Name="Doc">
+        <file file_name="$(PackagesDir)/ESPRO/COMPRESS/Doc/Release_emCompress_Embed.html">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+        <file file_name="$(PackagesDir)/ESPRO/COMPRESS/Doc/Release_emCompress_ToGo.html">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+        <file file_name="$(PackagesDir)/ESPRO/COMPRESS/Doc/UM17001_emCompress_Embed.pdf">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+        <file file_name="$(PackagesDir)/ESPRO/COMPRESS/Doc/UM17003_emCompress_ToGo.pdf">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+      </folder>
+      <folder Name="Generic">
+        <file file_name="$(ProjectDir)/COMPRESS/Generic/COMPRESS_Conf.h" />
+        <file file_name="$(ProjectDir)/COMPRESS/Generic/COMPRESS_ConfigIO.c" />
+        <file file_name="$(ProjectDir)/COMPRESS/Generic/CTG_Conf.h" />
+      </folder>
+    </folder>
+    <folder Name="CRYPTO">
+      <folder Name="Doc">
+        <file file_name="$(PackagesDir)/ESPRO/CRYPTO/Doc/Release_emCrypt.html">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+        <file file_name="$(PackagesDir)/ESPRO/CRYPTO/Doc/UM12006_emCrypt.pdf">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+      </folder>
+      <folder Name="Generic">
+        <file file_name="$(ProjectDir)/CRYPTO/Generic/CRYPTO_Conf.h" />
+        <file file_name="$(ProjectDir)/CRYPTO/Generic/CRYPTO_OS_embOS.c" />
+      </folder>
+      <folder Name="Setup">
+        <file file_name="$(ProjectDir)/CRYPTO/Setup/CRYPTO_X_Config_Full_CM.c" />
+        <file file_name="$(ProjectDir)/CRYPTO/Setup/CRYPTO_X_Config_SECURE_ECDSA_CM.c">
+          <configuration Name="Common" build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="$(ProjectDir)/CRYPTO/Setup/CRYPTO_X_Config_SECURE_RSA_CM.c">
+          <configuration Name="Common" build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="$(ProjectDir)/CRYPTO/Setup/CRYPTO_X_Config_SSH_CM.c">
+          <configuration Name="Common" build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="$(ProjectDir)/CRYPTO/Setup/CRYPTO_X_Config_SSL_CM.c">
+          <configuration Name="Common" build_exclude_from_build="Yes" />
+        </file>
+      </folder>
+    </folder>
+    <folder Name="FS">
+      <folder Name="Doc">
+        <file file_name="$(PackagesDir)/ESPRO/FS/Doc/Release_emFile.html">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+        <file file_name="$(PackagesDir)/ESPRO/FS/Doc/UM02001_emFile.pdf">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+      </folder>
+      <folder Name="Generic">
+        <file file_name="$(ProjectDir)/FS/Generic/FS_Conf.h" />
+        <file file_name="$(ProjectDir)/FS/Generic/FS_ConfigIO.c" />
+        <file file_name="$(ProjectDir)/FS/Generic/FS_OS_embOS.c" />
+      </folder>
+      <folder Name="Setup">
+        <file file_name="$(ProjectDir)/FS/Setup/FS_ConfigRAMDisk.c" />
+        <file file_name="$(ProjectDir)/FS/Setup/FS_ConfigRAMDisk_23k.c">
+          <configuration Name="Common" build_exclude_from_build="Yes" />
+        </file>
+      </folder>
+    </folder>
+    <folder Name="IOT">
+      <folder Name="Doc">
+        <file file_name="$(PackagesDir)/ESPRO/IOT/Doc/Release_IoTToolkit.html">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+        <file file_name="$(PackagesDir)/ESPRO/IOT/Doc/UM15004_IoTToolkit.pdf">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+      </folder>
+      <folder Name="Generic">
+        <file file_name="$(ProjectDir)/IOT/Generic/IOT_Conf.h" />
+        <file file_name="$(ProjectDir)/IOT/Generic/IOT_ConfigIO.c" />
+      </folder>
+    </folder>
+    <folder Name="IP">
+      <folder Name="Doc">
+        <file file_name="$(PackagesDir)/ESPRO/IP/Doc/Release_emNet.html">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+        <file file_name="$(PackagesDir)/ESPRO/IP/Doc/UM07001_emNet.pdf">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+      </folder>
+      <folder Name="Generic">
+        <folder Name="FS_RO">
+          <folder Name="Generated">
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/About.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/About.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Authen.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Authen.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/BGround.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/BGround.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/BTL_Det.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/BTL_Det.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/BTL_Pic.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/BTL_Pic.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Empty.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Empty.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Error404.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Error404.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/events.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/events.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/favicon.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/favicon.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/FormGET.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/FormGET.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/FormPOST.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/FormPOST.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/FS_Det.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/FS_Det.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/FS_Pic.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/FS_Pic.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/GreenRUp.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/GreenRUp.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/GUI_Det.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/GUI_Det.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/GUI_Pic.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/GUI_Pic.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/index.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/index.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/IP_Det.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/IP_Det.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/IP_Pic.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/IP_Pic.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/IPConf.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/IPConf.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/IPInf.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/IPInf.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/jquery.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/jquery.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Logo.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Logo.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/OS_Det.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/OS_Det.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/OS_Pic.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/OS_Pic.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/OSInf.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/OSInf.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Products.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Products.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/RedRDown.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/RedRDown.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/RGraphCC.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/RGraphCC.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/RGraphCE.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/RGraphCE.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/RGraphLi.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/RGraphLi.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/SendMail.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/SendMail.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Shares.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Shares.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/SSE_IP.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/SSE_IP.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/SSE_OS.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/SSE_OS.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/SSE_Time.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/SSE_Time.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Styles.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Styles.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Upl.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Upl.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Upl_AJAX.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/Upl_AJAX.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/USBD_Det.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/USBD_Det.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/USBD_Pic.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/USBD_Pic.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/USBH_Det.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/USBH_Det.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/USBH_Pic.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/USBH_Pic.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/VirtFile.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/VirtFile.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/WhiteR.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Generated/WhiteR.h" />
+          </folder>
+          <folder Name="html">
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/About.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/Authen.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/BGround.png" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/BTL_Det.jpg" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/BTL_Pic.jpg" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/Empty.gif" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/Error404.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/events.js" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/favicon.ico" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/FormGET.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/FormPOST.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/FS_Det.jpg" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/FS_Pic.jpg" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/GreenRUp.gif" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/GUI_Det.jpg" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/GUI_Pic.jpg" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/index.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/IP_Det.jpg" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/IP_Pic.jpg" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/IPConf.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/IPInf.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/jquery.js" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/Logo.gif" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/OS_Det.jpg" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/OS_Pic.jpg" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/OSInf.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/Products.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/RedRDown.gif" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/RGraphCC.js" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/RGraphCE.js" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/RGraphLi.js" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/SendMail.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/Shares.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/SSE_IP.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/SSE_OS.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/SSE_Time.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/Styles.css" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/Upl.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/Upl_AJAX.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/USBD_Det.jpg" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/USBD_Pic.jpg" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/USBH_Det.jpg" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/USBH_Pic.jpg" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/VirtFile.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO/html/WhiteR.gif" />
+          </folder>
+          <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Tool/Bin2C.exe" />
+          <file file_name="$(ProjectDir)/IP/Generic/FS_RO/cc.bat" />
+          <file file_name="$(ProjectDir)/IP/Generic/FS_RO/CleanUp.bat" />
+          <file file_name="$(ProjectDir)/IP/Generic/FS_RO/IP_FS_ReadOnly.c" />
+          <file file_name="$(ProjectDir)/IP/Generic/FS_RO/m.bat" />
+          <file file_name="$(ProjectDir)/IP/Generic/FS_RO/Webserver_DynContent.c" />
+        </folder>
+        <folder Name="FS_RO_2018">
+          <folder Name="Generated">
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/Authen_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/Authen_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/bootstrap_min_css_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/bootstrap_min_css_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/bootstrap_min_js_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/bootstrap_min_js_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/Custom_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/Custom_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/embOSMPU_Icon_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/embOSMPU_Icon_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emFile_Icon_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emFile_Icon_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emLoad_Icon_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emLoad_Icon_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emNet_Icon_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emNet_Icon_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/Empty_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/Empty_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emSSH_Icon_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emSSH_Icon_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emSSL_Icon_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emSSL_Icon_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emUSBD_Icon_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emUSBD_Icon_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emUSBH_Icon_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emUSBH_Icon_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emWeb_Logo_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emWeb_Logo_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emWin_Icon_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/emWin_Icon_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/Error404_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/Error404_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/events_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/events_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/favicon_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/favicon_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/FormGET_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/FormGET_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/FormPOST_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/FormPOST_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/GreenRUp_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/GreenRUp_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/index_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/index_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/IPConfig_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/IPConfig_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/jquery_min_js_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/jquery_min_js_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/Logo_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/Logo_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/OSInfo_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/OSInfo_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/Products_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/Products_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/RedRDown_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/RedRDown_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/RGraphCC_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/RGraphCC_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/RGraphCE_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/RGraphCE_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/RGraphLi_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/RGraphLi_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/Samples_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/Samples_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/Shares_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/Shares_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/tether_min_js_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/tether_min_js_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/VirtFile_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/VirtFile_2018.h" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/WhiteR_2018.c" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Generated/WhiteR_2018.h" />
+          </folder>
+          <folder Name="html">
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/Authen.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/Custom.css" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/embOSMPU_Icon.gif" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/emFile_Icon.gif" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/emLoad_Icon.gif" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/emNet_Icon.gif" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/Empty.gif" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/emSSH_Icon.gif" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/emSSL_Icon.gif" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/emUSBD_Icon.gif" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/emUSBH_Icon.gif" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/emWeb_Logo.png" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/emWin_Icon.gif" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/Error404.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/favicon.ico" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/FormGET.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/FormPOST.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/GreenRUp.gif" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/index.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/IPConfig.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/Logo.gif" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/OSInfo.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/Products.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/RedRDown.gif" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/Samples.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/Shares.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/VirtFile.htm" />
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/html/WhiteR.gif" />
+          </folder>
+          <folder Name="Tool">
+            <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Tool/Bin2C.exe" />
+          </folder>
+          <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/cc.bat" />
+          <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/cc_gzip.bat" />
+          <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/CleanUp.bat" />
+          <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/gzip.bat" />
+          <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/IP_FS_ReadOnly_2018.c" />
+          <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/m.bat" />
+          <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/m_gzip.bat" />
+          <file file_name="$(ProjectDir)/IP/Generic/FS_RO_2018/Webserver_DynContent_2018.c" />
+        </folder>
+        <file file_name="$(ProjectDir)/IP/Generic/CM_IP_cksum.S" />
+        <file file_name="$(ProjectDir)/IP/Generic/FTPC_Conf.h" />
+        <file file_name="$(ProjectDir)/IP/Generic/IP_COAP_Conf.h" />
+        <file file_name="$(ProjectDir)/IP/Generic/IP_Conf.h" />
+        <file file_name="$(ProjectDir)/IP/Generic/IP_ConfigIO.c" />
+        <file file_name="$(ProjectDir)/IP/Generic/IP_FIND.c" />
+        <file file_name="$(ProjectDir)/IP/Generic/IP_FIND.h" />
+        <file file_name="$(ProjectDir)/IP/Generic/IP_FS_emFile.c" />
+        <file file_name="$(ProjectDir)/IP/Generic/IP_FTP_SERVER_Conf.h" />
+        <file file_name="$(ProjectDir)/IP/Generic/IP_MQTT_CLIENT_Conf.h" />
+        <file file_name="$(ProjectDir)/IP/Generic/IP_OS_embOS.c" />
+        <file file_name="$(ProjectDir)/IP/Generic/SMTPC_Conf.h" />
+        <file file_name="$(ProjectDir)/IP/Generic/WEBS_Conf.h" />
+        <file file_name="$(ProjectDir)/IP/Generic/WiFi_Callbacks.c" />
+      </folder>
+      <folder Name="Setup">
+        <file file_name="$(ProjectDir)/IP/Setup/IP_Config_ECM.c">
+          <configuration Name="Common" build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="$(ProjectDir)/IP/Setup/IP_Config_IP_over_USB.c" />
+        <file file_name="$(ProjectDir)/IP/Setup/IP_Config_NCM.c">
+          <configuration Name="Common" build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="$(ProjectDir)/IP/Setup/IP_Config_RNDIS.c">
+          <configuration Name="Common" build_exclude_from_build="Yes" />
+        </file>
+      </folder>
+    </folder>
+    <folder Name="MB">
+      <folder Name="Doc">
+        <file file_name="$(PackagesDir)/ESPRO/MB/Doc/Release_emModbus.html">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+        <file file_name="$(PackagesDir)/ESPRO/MB/Doc/UM14001_emModbus.pdf">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+      </folder>
+      <folder Name="Generic">
+        <file file_name="$(ProjectDir)/MB/Generic/MB_Conf.h" />
+        <file file_name="$(ProjectDir)/MB/Generic/MB_ConfigIO.c" />
+        <file file_name="$(ProjectDir)/MB/Generic/MB_OS_embOS.c" />
+      </folder>
+    </folder>
+    <folder Name="OS">
+      <folder Name="Doc">
+        <file file_name="$(PackagesDir)/ESPRO/OS/Doc/Release_embOS.html">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+        <file file_name="$(PackagesDir)/ESPRO/OS/Doc/Release_embOS_CortexM_ES.html">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+        <file file_name="$(PackagesDir)/ESPRO/OS/Doc/UM01001_embOS.pdf">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+        <file file_name="$(PackagesDir)/ESPRO/OS/Doc/UM01061_embOS_CortexM_ES.pdf">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+      </folder>
+      <folder Name="Generic">
+        <file file_name="$(ProjectDir)/OS/Generic/embOSPlugin.js" />
+        <file file_name="$(ProjectDir)/OS/Generic/HardFaultHandler.S" />
+        <file file_name="$(ProjectDir)/OS/Generic/JLINKMEM_Process.c" />
+        <file file_name="$(ProjectDir)/OS/Generic/OS_Error.c" />
+        <file file_name="$(ProjectDir)/OS/Generic/OS_ThreadSafe.c" />
+      </folder>
+      <folder Name="Setup">
+        <folder Name="CoreSupport">
+          <file file_name="$(ProjectDir)/OS/Setup/CoreSupport/cmsis_compiler.h" />
+          <file file_name="$(ProjectDir)/OS/Setup/CoreSupport/cmsis_gcc.h" />
+          <file file_name="$(ProjectDir)/OS/Setup/CoreSupport/cmsis_version.h" />
+          <file file_name="$(ProjectDir)/OS/Setup/CoreSupport/core_cm4.h" />
+          <file file_name="$(ProjectDir)/OS/Setup/CoreSupport/mpu_armv7.h" />
+        </folder>
+        <folder Name="DeviceSupport">
+          <file file_name="$(ProjectDir)/OS/Setup/DeviceSupport/compiler_abstraction.h" />
+          <file file_name="$(ProjectDir)/OS/Setup/DeviceSupport/nrf.h" />
+          <file file_name="$(ProjectDir)/OS/Setup/DeviceSupport/nrf51_to_nrf52840.h" />
+          <file file_name="$(ProjectDir)/OS/Setup/DeviceSupport/nrf52840.h" />
+          <file file_name="$(ProjectDir)/OS/Setup/DeviceSupport/nrf52840_bitfields.h" />
+          <file file_name="$(ProjectDir)/OS/Setup/DeviceSupport/nrf52_to_nrf52840.h" />
+          <file file_name="$(ProjectDir)/OS/Setup/DeviceSupport/ses_startup_nrf52840.s" />
+          <file file_name="$(ProjectDir)/OS/Setup/DeviceSupport/ses_startup_nrf_common.s" />
+          <file file_name="$(ProjectDir)/OS/Setup/DeviceSupport/system_nrf52840.c" />
+          <file file_name="$(ProjectDir)/OS/Setup/DeviceSupport/system_nrf52840.h" />
+        </folder>
+        <file file_name="$(ProjectDir)/OS/Setup/BSP.c" />
+        <file file_name="$(ProjectDir)/OS/Setup/nrf52840.svd" />
+        <file file_name="$(ProjectDir)/OS/Setup/nRF52840_xxAA_MemoryMap.xml" />
+        <file file_name="$(ProjectDir)/OS/Setup/nRF_Target.js" />
+        <file file_name="$(ProjectDir)/OS/Setup/RTOSInit_nRF5x.c" />
+        <file file_name="$(ProjectDir)/OS/Setup/SEGGER_RTT_Conf.h" />
+        <file file_name="$(ProjectDir)/OS/Setup/SEGGER_SYSVIEW_Conf.h" />
+        <file file_name="$(ProjectDir)/OS/Setup/SEGGER_SYSVIEW_Config_embOS.c" />
+        <file file_name="$(ProjectDir)/OS/Setup/SEGGER_THUMB_Startup.s" />
+        <file file_name="$(ProjectDir)/OS/Setup/ses_nrf52840_xxaa.icf" />
+      </folder>
+    </folder>
+    <folder Name="SECURE">
+      <folder Name="Doc">
+        <file file_name="$(PackagesDir)/ESPRO/SECURE/Doc/Release_emSecureECDSA.html">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+        <file file_name="$(PackagesDir)/ESPRO/SECURE/Doc/Release_emSecureRSA.html">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+        <file file_name="$(PackagesDir)/ESPRO/SECURE/Doc/UM12002_emSecureRSA.pdf">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+        <file file_name="$(PackagesDir)/ESPRO/SECURE/Doc/UM12004_emSecureECDSA.pdf">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+      </folder>
+      <folder Name="Generic">
+        <folder Name="Keys">
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_ECDSA_PrivateKey_P192.h" />
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_ECDSA_PrivateKey_P224.h" />
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_ECDSA_PrivateKey_P256.h" />
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_ECDSA_PrivateKey_P384.h" />
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_ECDSA_PrivateKey_P521.h" />
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_ECDSA_PublicKey_P192.h" />
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_ECDSA_PublicKey_P224.h" />
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_ECDSA_PublicKey_P256.h" />
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_ECDSA_PublicKey_P384.h" />
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_ECDSA_PublicKey_P521.h" />
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_RSA_PrivateKey_1024b.h" />
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_RSA_PrivateKey_2048b.h" />
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_RSA_PrivateKey_512b.h" />
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_RSA_PrivateKey_Expert.h" />
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_RSA_PublicKey_1024b.h" />
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_RSA_PublicKey_2048b.h" />
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_RSA_PublicKey_512b.h" />
+          <file file_name="$(ProjectDir)/SECURE/Generic/Keys/SECURE_RSA_PublicKey_Expert.h" />
+        </folder>
+        <file file_name="$(ProjectDir)/SECURE/Generic/SECURE_ECDSA_Conf.h" />
+        <file file_name="$(ProjectDir)/SECURE/Generic/SECURE_RSA_Conf.h" />
+      </folder>
+    </folder>
+    <folder Name="SEGGER">
+      <file file_name="$(ProjectDir)/SEGGER/SEGGER_HardFaultHandler.c" />
+      <file file_name="$(ProjectDir)/SEGGER/SEGGER_RTT_ASM_ARMv7M.S" />
+      <file file_name="$(ProjectDir)/SEGGER/SEGGER_SYS.c" />
+      <file file_name="$(ProjectDir)/SEGGER/SEGGER_SYS_embOS.c" />
+      <file file_name="$(ProjectDir)/SEGGER/SEGGER_SYS_IO.c" />
+      <file file_name="$(ProjectDir)/SEGGER/SEGGER_SYS_IO_RTT.c" />
+      <file file_name="$(ProjectDir)/SEGGER/SEGGER_SYS_IP_embOSIP.c" />
+      <file file_name="$(ProjectDir)/SEGGER/SEGGER_SYS_OS_embOS.c" />
+      <file file_name="$(ProjectDir)/SEGGER/SEGGER_SYSVIEW.c" />
+      <file file_name="$(ProjectDir)/SEGGER/SEGGER_SYSVIEW_embOS.c" />
+    </folder>
+    <folder Name="SSH">
+      <folder Name="Doc">
+        <file file_name="$(PackagesDir)/ESPRO/SSH/Doc/Release_emSSH.html">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+        <file file_name="$(PackagesDir)/ESPRO/SSH/Doc/UM20001_emSSH.pdf">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+      </folder>
+      <folder Name="Generic">
+        <folder Name="Keys">
+          <file file_name="$(ProjectDir)/SSH/Generic/Keys/SSH_ServerKeys_DSA.c" />
+          <file file_name="$(ProjectDir)/SSH/Generic/Keys/SSH_ServerKeys_ECDSA.c" />
+          <file file_name="$(ProjectDir)/SSH/Generic/Keys/SSH_ServerKeys_EdDSA.c" />
+          <file file_name="$(ProjectDir)/SSH/Generic/Keys/SSH_ServerKeys_RSA.c" />
+        </folder>
+        <folder Name="SSH_FS">
+          <file file_name="$(ProjectDir)/SSH/Generic/SSH_FS/SSH_SCP_SINK_FS_FS.c" />
+          <file file_name="$(ProjectDir)/SSH/Generic/SSH_FS/SSH_SCP_SINK_FS_Null.c" />
+          <file file_name="$(ProjectDir)/SSH/Generic/SSH_FS/SSH_SCP_SOURCE_FS_FS.c" />
+        </folder>
+        <file file_name="$(ProjectDir)/SSH/Generic/SSH_Conf.h" />
+        <file file_name="$(ProjectDir)/SSH/Generic/SSH_ConfigIO.c" />
+        <file file_name="$(ProjectDir)/SSH/Generic/SSH_OS_embOS.c" />
+        <file file_name="$(ProjectDir)/SSH/Generic/SSH_X_Config.c" />
+      </folder>
+    </folder>
+    <folder Name="SSL">
+      <folder Name="Doc">
+        <file file_name="$(PackagesDir)/ESPRO/SSL/Doc/Release_emSSL.html">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+        <file file_name="$(PackagesDir)/ESPRO/SSL/Doc/UM15001_emSSL.pdf">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+      </folder>
+      <folder Name="Generic">
+        <folder Name="Certificates">
+          <file file_name="$(ProjectDir)/SSL/Generic/Certificates/SSL_EC_Certificate.c" />
+          <file file_name="$(ProjectDir)/SSL/Generic/Certificates/SSL_EC_Certificate.h" />
+          <file file_name="$(ProjectDir)/SSL/Generic/Certificates/SSL_EC_PrivateKey.c" />
+          <file file_name="$(ProjectDir)/SSL/Generic/Certificates/SSL_EC_PrivateKey.h" />
+          <file file_name="$(ProjectDir)/SSL/Generic/Certificates/SSL_RSA_Certificate.c" />
+          <file file_name="$(ProjectDir)/SSL/Generic/Certificates/SSL_RSA_Certificate.h" />
+          <file file_name="$(ProjectDir)/SSL/Generic/Certificates/SSL_RSA_PrivateKey.c" />
+          <file file_name="$(ProjectDir)/SSL/Generic/Certificates/SSL_RSA_PrivateKey.h" />
+        </folder>
+        <file file_name="$(ProjectDir)/SSL/Generic/SSL_Conf.h" />
+        <file file_name="$(ProjectDir)/SSL/Generic/SSL_ConfigIO.c" />
+        <file file_name="$(ProjectDir)/SSL/Generic/SSL_OS_embOS.c" />
+        <file file_name="$(ProjectDir)/SSL/Generic/SSL_X_Config.c" />
+        <file file_name="$(ProjectDir)/SSL/Generic/SSL_X_TrustedCerts.c" />
+      </folder>
+    </folder>
+    <folder Name="USBD">
+      <folder Name="Doc">
+        <file file_name="$(PackagesDir)/ESPRO/USBD/Doc/Release_emUSB.html">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+        <file file_name="$(PackagesDir)/ESPRO/USBD/Doc/UM09001_emUSBD.pdf">
+          <configuration Name="Common" file_open_with="Web Browser" />
+        </file>
+      </folder>
+      <folder Name="Generic">
+        <folder Name="USBD_Video">
+          <file file_name="$(ProjectDir)/USBD/Generic/USBD_Video/video.yuv" />
+        </folder>
+        <file file_name="$(ProjectDir)/USBD/Generic/USB_Conf.h" />
+        <file file_name="$(ProjectDir)/USBD/Generic/USB_ConfigIO.c" />
+        <file file_name="$(ProjectDir)/USBD/Generic/USB_OS_embOSv5.c" />
+      </folder>
+      <folder Name="Setup">
+        <file file_name="$(ProjectDir)/USBD/Setup/BSP_USB.c" />
+        <file file_name="$(ProjectDir)/USBD/Setup/USB_Config_Nordic_nRF52840_DK.c" />
+      </folder>
+    </folder>
+    <file file_name="$(PackagesDir)/ESPRO/Doc/LICENSE.html">
+      <configuration Name="Common" file_open_with="Web Browser" />
+    </file>
+    <file file_name="$(PackagesDir)/ESPRO/Doc/README_FirstSteps.html">
+      <configuration Name="Common" file_open_with="Web Browser" />
+    </file>
+  </project>
+</solution>

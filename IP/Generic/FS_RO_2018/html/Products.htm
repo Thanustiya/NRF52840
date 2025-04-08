@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>SEGGER Webserver demo</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap_min_css.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="Custom.css" rel="stylesheet">
+
+    <script>
+      //
+      // Create a XMLHttpRequest.
+      // Tries to handle the different browser implementation
+      //
+      function _CreateRequest() {
+        try {
+          request = new XMLHttpRequest();
+        } catch (tryMS) {
+          try {
+            request = new ActiveXObject("Msxml2.XMLHTTP");
+          } catch (otherMS) {
+            try {
+              request = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (failed) {
+              request = null;
+            }
+          }
+        }
+        return request;
+      }
+      
+      
+      function smoothscroll(){
+          var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+          if (currentScroll > 0) {
+            window.requestAnimationFrame(smoothscroll);
+            window.scrollTo (0,currentScroll - (currentScroll/5));
+          }
+      }
+      
+      //
+      // Checks if the request was successful and updates the product details.
+      //
+      function _DisplayDetails() {
+        if (request.readyState == 4) { // Is the request complete ?
+          if (request.status == 200) { // Status OK ?
+            detailDiv = document.getElementById("Description");
+            detailDiv.innerHTML = request.responseText;
+            smoothscroll();
+          }
+        }
+      }     
+      //
+      // Request the details from the server.
+      // 
+      function _GetDetails(itemName) {
+        request = _CreateRequest();
+        if (request == null) {
+          alert("Unable to create request");
+          return;
+        }
+        var url= "../GetDetails.cgi?ImageID=" + escape(itemName);
+        request.open("GET", url, true);
+        request.onreadystatechange = _DisplayDetails;
+        request.send(null);
+      }
+      //
+      // Initializes the elements required for the AJAX sample.
+      //
+      function _InitPage() {
+        //
+        // Find the thumbnails on the page
+        //
+        thumbs = document.getElementById("Thumbnails").getElementsByTagName("img");
+        //
+        // Set the handler for each image
+        //
+        for (var i = 0; i < thumbs.length; i++) {
+          image = thumbs[i];
+          //
+          // Create the onclick function
+          //
+          image.onclick = function() {
+            //
+            // Find the image name
+            //
+            detailURL = this.title + '_Icon.gif';
+            document.getElementById("ProductImage").src = detailURL;
+            _GetDetails(this.title);
+          }
+        }
+        _GetDetails();
+      }      
+      window.onload = _InitPage;    
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <!--            -->
+      <!-- Navigation -->
+      <!--            -->
+      <nav class="navbar navbar-light bg-faded rounded navbar-toggleable-md" id="navigation">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#containerNavbar" aria-controls="containerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <span class="navbar-brand" id="brand">emWeb |</span>
+        <div class="collapse navbar-collapse" id="containerNavbar">
+          <ul class="navbar-nav mr-auto" id="navList">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.htm">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <!--#exec cgi="GetConfigMenuItem"-->
+            <li class="nav-item dropdown">
+              <!--#exec cgi="GetDropdown"-->
+            </li>
+          </ul>
+          <div class="navbar-text" id="LOG_SysUptime"></div>          
+        </div>
+      </nav>
+      <!--         -->
+      <!-- Content -->
+      <!--         -->      
+      <div class="jumbotron jumbotron-fluid" id="contentMain">
+        <div class="row" id="row01">
+          <div class="col-sm-12">
+            <div class="textBlock">
+              <div id="Details" class="details">
+                <center><img src="Empty.gif" id="ProductImage"></center>
+                <div id="Description" class="description"></div>
+              </div>
+            </div> <!-- textBlock -->
+          </div> <!-- col-sm-12 -->
+        </div> <!-- row01 -->
+        <div class="textBlock">
+          <div id="Thumbnails" class="thumbnails">
+            <hr>
+            <div class="row" id="row02">
+              <div class="col-sm-4">
+                <img src="embOSMPU_Icon.gif"   alt="embOS-MPU"   title="embOSMPU"   id="embOS"><br>
+              </div>
+              <div class="col-sm-4">
+                <img src="emNet_Icon.gif"   alt="emNet" title="emNet"    id="emNet"><br>
+              </div>
+              <div class="col-sm-4">
+                <img src="emSSL_Icon.gif"   alt="emSSL"  title="emSSL"   id="emSSL"><br>
+              </div>
+            </div> <!-- row02 -->
+            <hr>
+            <div class="row" id="row03">
+              <div class="col-sm-4">
+                <img src="emSSH_Icon.gif"  alt="emSSH"   title="emSSH"  id="emSSH"><br>
+              </div>
+              <div class="col-sm-4">
+                <img src="emUSBD_Icon.gif" alt="emUSB-Device"  title="emUSBD" id="emUSBD"><br>
+              </div>
+              <div class="col-sm-4">
+                <img src="emUSBH_Icon.gif" alt="emUSB-Host"  title="emUSBH" id="emUSBH"><br>
+              </div>
+            </div> <!-- row03 -->
+            <hr>
+            <div class="row" id="row04">
+              <div class="col-sm-4">
+                <img src="emWin_Icon.gif"  alt="emWin"   title="emWin"  id="emWin"><br>
+              </div>            
+              <div class="col-sm-4">
+                <img src="emFile_Icon.gif"   alt="emFile"  title="emFile"   id="emFile"><br>
+              </div>
+              <div class="col-sm-4">
+                <img src="emLoad_Icon.gif"  alt="emLoad"  title="emLoad"  id="emLoad"><br>
+              </div>
+            </div> <!-- row04 -->
+            <hr>            
+          </div> <!-- Thumbnails --> 
+        </div> <!-- textBlock -->
+        <script>
+          if(typeof(EventSource) !== "undefined") {
+            var conn = new EventSource("MaintenanceInfo.cgi");
+            //
+            //
+            //
+            function _ShowSSEUpdates(event) {
+              document.getElementById("LOG_SSEUpdates").innerHTML = event.data;
+            };
+            function _ShowSysUptime(event) {
+              document.getElementById("LOG_SysUptime").innerHTML = event.data;
+            };
+            //
+            //
+            //
+            conn.addEventListener('LOG_SSEUpdates',     _ShowSSEUpdates);
+            conn.addEventListener('LOG_SysUptime',      _ShowSysUptime);
+          } else {
+            document.getElementById("LOG_ConnectionInfo").innerHTML = "Sorry, your browser does not support Server-Sent Events (SSE)...";
+          }
+        </script>
+        <div class="row">
+          <div class="col-sm-6" id="footer">
+            <img src="Logo.gif"  class="img-responsive" alt="SEGGER company logo">
+          </div> <!-- Logo -->
+          <div class="col-sm-6 text-right" id="footer">
+            <!--#exec cgi="Counter"-->
+            <br><span class="hint" id="LOG_SSEUpdates"></span>
+          </div> <!-- footer -->
+        </div>  <!-- row -->
+      </div> <!-- Jumbotron -->
+    </div> <!-- container -->      
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery_min_js.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery_min_js.js"><\/script>')</script>
+    <script src="js/tether_min_js.js"></script>
+    <script src="js/bootstrap_min_js.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<!--    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>  -->
+  </body>
+</html>

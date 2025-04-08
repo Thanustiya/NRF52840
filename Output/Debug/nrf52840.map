@@ -1,0 +1,1444 @@
+***********************************************************************************************
+***                                                                                         ***
+***                                    LINK INFORMATION                                     ***
+***                                                                                         ***
+***********************************************************************************************
+
+Linker version:
+
+  SEGGER ARM Linker 4.44.1 compiled Dec 19 2024 18:37:45
+  Copyright (c) 2017-2024 SEGGER Microcontroller GmbH    www.segger.com
+
+
+***********************************************************************************************
+***                                                                                         ***
+***                                     MODULE SUMMARY                                      ***
+***                                                                                         ***
+***********************************************************************************************
+
+Memory use by input file:
+
+  Object File                                       RX Code     RO Data     RW Data     ZI Data
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  BSP_USB.o                                             328                                   4
+  HardFaultHandler.o                                     24                                    
+  JLINKMEM_Process.o                                    848                                  45
+  Main.o                                                774         570                        
+  OS_Error.o                                             48                                    
+  RTOSInit_nRF5x.o                                      350           4                        
+  SEGGER_HardFaultHandler.o                             280                                  72
+  SEGGER_SYSVIEW.o                                                                            4
+  SEGGER_THUMB_Startup.o                                 20                                    
+  ses_startup_nrf52840.o                                630                                    
+  ses_startup_nrf_common.o                               12                                    
+  system_nrf52840.o                                   1 050                       4            
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Subtotal (12 objects)                               4 364         574           4         125
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  heapops_basic_v7em_fpv4_sp_d16_t_le_eabi_balanced.a
+                                                         24                                   4
+  libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a          6 748         299                        
+  libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a
+                                                      2 284                       8         180
+  mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a
+                                                        206         541          20           4
+  prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a
+                                                        488          26          12       1 220
+  SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a
+                                                         98                                    
+  strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a
+                                                        370                                    
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Subtotal (7 archives)                              10 218         866          40       1 408
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Linker created (shared data, fills, blocks):                       84                   2 304
+  =============================================  ==========  ==========  ==========  ==========
+  Total:                                             14 582       1 524          44       3 837
+  =============================================  ==========  ==========  ==========  ==========
+
+Memory use by archive member:
+
+  Archive member                                    RX Code     RO Data     RW Data     ZI Data
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  __SEGGER_RTL_vfprintf_float_long.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+                                                      3 256          35                        
+  fileops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+                                                         46                                    
+  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+                                                      1 776                                    
+  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+                                                        860                                    
+  heapops_basic.o (heapops_basic_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+                                                         24                                   4
+  intasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+                                                        304                                    
+  intops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+                                                          8                                    
+  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+                                                        206         541          20           4
+  OS_ARMv7M_GetCPUState.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+                                                         78                                    
+  OS_Global.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+                                                                                            176
+  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+                                                      1 328                                   4
+  OS_StackInfo.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+                                                         30                                    
+  OS_SysTick.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+                                                        202                       8            
+  OS_Task.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+                                                        104                                    
+  OS_Timing.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+                                                        174                                    
+  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+                                                        394         192                        
+  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+                                                         66                      12          12
+  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+                                                        368                                    
+  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+                                                         98                                    
+  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+                                                        422          26                   1 208
+  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+                                                        196                                    
+  strops.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+                                                        174                                    
+  utilops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+                                                        104          72                        
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Subtotal (23 members from 7 archives)              10 218         866          40       1 408
+  Objects (12 files)                                  4 364         574           4         125
+  Linker created (shared data, fills, blocks):                       84                   2 304
+  =============================================  ==========  ==========  ==========  ==========
+  Total:                                             14 582       1 524          44       3 837
+  =============================================  ==========  ==========  ==========  ==========
+
+Memory use by linker:
+
+  Description                                       RX Code     RO Data     RW Data     ZI Data
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Initialization table                                               84                        
+  Memory for block 'heap'                                                                 1 280
+  Memory for block 'stack'                                                                1 024
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Subtotal (linker created):                                         84                   2 304
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Objects (12 files)                                  4 364         574           4         125
+  Archives (7 files)                                 10 218         866          40       1 408
+  =============================================  ==========  ==========  ==========  ==========
+  Total:                                             14 582       1 524          44       3 837
+  =============================================  ==========  ==========  ==========  ==========
+
+
+***********************************************************************************************
+***                                                                                         ***
+***                                     SECTION DETAIL                                      ***
+***                                                                                         ***
+***********************************************************************************************
+
+Sections by address:
+
+  Range              Symbol or [section] Name         Size  Al  Init  Ac  Object File
+  -----------------  -------------------------  ----------  --  ----  --  -----------
+  00000000-000001ff  _vectors                          512  512
+                                                                Code  RX  ses_startup_nrf52840.o
+  00000200-000003af  fmod                              432   8  Code  RX  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000003b0-0000048f  floor                             224   8  Code  RX  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00000490-000004f7  __SEGGER_RTL_pow10                104   8  Code  RX  utilops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000004f8-0000053f  __SEGGER_RTL_aPower2               72   8  Cnst  RO  utilops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00000540-000005df  __SEGGER_RTL_ipow10               160   8  Cnst  RO  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000005e0-000005f3  _start                             20   4  Code  RX  SEGGER_THUMB_Startup.o
+  000005f4-00000667  main                              116   4  Code  RX  Main.o
+  00000668-00000677  delay_ms                           16   4  Code  RX  Main.o
+  00000678-000006a7  check_sim_status                   48   4  Code  RX  Main.o
+  000006a8-000006cb  __NVIC_SystemReset                 36   4  Code  RX  Main.o
+  000006cc-0000075b  _Receive                          144   4  Code  RX  JLINKMEM_Process.o
+  0000075c-000007af  _LockTxBuf                         84   4  Code  RX  JLINKMEM_Process.o
+  000007b0-00000863  _FillTxBuf                        180   4  Code  RX  JLINKMEM_Process.o
+  00000864-00000893  OS_Error                           48   4  Code  RX  OS_Error.o
+  00000894-000008a7  SystemCoreClockUpdate              20   4  Code  RX  system_nrf52840.o
+  000008a8-00000acb  SystemInit                        548   4  Code  RX  system_nrf52840.o
+  00000acc-00000c27  SysTick_Handler                   348   4  Code  RX  RTOSInit_nRF5x.o
+  00000c28-00000d6f  USBD_IRQHandler                   328   4  Code  RX  BSP_USB.o
+  00000d70-00000e87  HardFaultHandler                  280   4  Code  RX  SEGGER_HardFaultHandler.o
+  00000e88-00000eb3  OS_AssertCPUInISRMode              44   4  Code  RX  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  00000eb4-00000edb  OS_AssertCPUNotInIllegalState
+                                                        40   4  Code  RX  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  00000edc-0000111b  __aeabi_dadd                      576   4  Code  RX  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0000111c-00001123  __aeabi_dsub                        8   4  Code  RX  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00001124-00001253  __aeabi_dmul                      304   4  Code  RX  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00001254-00001417  __aeabi_ddiv                      452   4  Code  RX  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00001418-00001453  __aeabi_dcmple                     60   4  Code  RX  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00001454-00001483  __aeabi_dcmpeq                     48   4  Code  RX  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00001484-000014bf  __aeabi_dcmpge                     60   4  Code  RX  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000014c0-000014f7  __aeabi_dcmpgt                     56   4  Code  RX  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000014f8-0000152f  __aeabi_dcmplt                     56   4  Code  RX  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00001530-0000156f  __aeabi_d2ulz                      64   4  Code  RX  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00001570-000015cb  __aeabi_ul2d                       92   4  Code  RX  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000015cc-000016fb  __aeabi_uldivmod                  304   4  Code  RX  intasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000016fc-000023b3  __SEGGER_RTL_vfprintf_float_long
+                                                     3 256   4  Code  RX  __SEGGER_RTL_vfprintf_float_long.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000023b4-0000240f  memcpy                             92   4  Code  RX  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00002410-00002477  __aeabi_memclr                    104   4  Code  RX  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00002478-0000247b  OS_JLINKMEM_BufferSize              4   4  Cnst  RO  RTOSInit_nRF5x.o
+  0000247c-00002487  __SEGGER_RTL_c_locale              12   4  Cnst  RO  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00002488-000024a7  __SEGGER_RTL_codeset_ascii
+                                                        32   4  Cnst  RO  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000024a8-000024ff  __SEGGER_RTL_c_locale_data
+                                                        88   4  Cnst  RO  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00002500-00002517  __SEGGER_init_heap                 24   4  Code  RX  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00002518-0000252f  HardFault_Handler                  24   4  Code  RX  HardFaultHandler.o
+  00002530-0000254b  nRFInitialize                      28   4  Code  RX  ses_startup_nrf52840.o
+  0000254c-000026bb  PendSV_Handler                    368   4  Code  RX  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  000026bc-0000272d  manage_connection                 114   4  Code  RX  Main.o
+  0000272e-0000272f  NMI_Handler                         2   2  Code  RX  ses_startup_nrf52840.o
+  00002730-000027cd  send_telemetry                    158   4  Code  RX  Main.o
+  000027ce-000027cf  SVC_Handler                         2   2  Code  RX  ses_startup_nrf52840.o
+  000027d0-0000280d  disconnect_network                 62   4  Code  RX  Main.o
+  0000280e-0000280f  POWER_CLOCK_IRQHandler              2   2  Code  RX  ses_startup_nrf52840.o
+  00002810-00002871  connect_network                    98   4  Code  RX  Main.o
+  00002872-00002873  RADIO_IRQHandler                    2   2  Code  RX  ses_startup_nrf52840.o
+  00002874-000028f1  uart_send_command                 126   4  Code  RX  Main.o
+  000028f2-000028f3  UARTE0_UART0_IRQHandler             2   2  Code  RX  ses_startup_nrf52840.o
+  000028f4-000029a5  JLINKMEM_Process                  178   4  Code  RX  JLINKMEM_Process.o
+  000029a6-000029a7  SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler
+                                                         2   2  Code  RX  ses_startup_nrf52840.o
+  000029a8-00002a19  _Init                             114   4  Code  RX  JLINKMEM_Process.o
+  00002a1a-00002a1b  SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
+                                                         2   2  Code  RX  ses_startup_nrf52840.o
+  00002a1c-00002a3d  _DropTxData                        34   4  Code  RX  JLINKMEM_Process.o
+  00002a3e-00002a3f  NFCT_IRQHandler                     2   2  Code  RX  ses_startup_nrf52840.o
+  00002a40-00002ab1  _Send                             114   4  Code  RX  JLINKMEM_Process.o
+  00002ab2-00002ab3  GPIOTE_IRQHandler                   2   2  Code  RX  ses_startup_nrf52840.o
+  00002ab4-00002b11  errata_36                          94   4  Code  RX  system_nrf52840.o
+  00002b12-00002b13  SAADC_IRQHandler                    2   2  Code  RX  ses_startup_nrf52840.o
+  00002b14-00002b71  errata_66                          94   4  Code  RX  system_nrf52840.o
+  00002b72-00002b73  TIMER0_IRQHandler                   2   2  Code  RX  ses_startup_nrf52840.o
+  00002b74-00002ba5  errata_98                          50   4  Code  RX  system_nrf52840.o
+  00002ba6-00002ba7  TIMER1_IRQHandler                   2   2  Code  RX  ses_startup_nrf52840.o
+  00002ba8-00002bd9  errata_103                         50   4  Code  RX  system_nrf52840.o
+  00002bda-00002bdb  TIMER2_IRQHandler                   2   2  Code  RX  ses_startup_nrf52840.o
+  00002bdc-00002c0d  errata_115                         50   4  Code  RX  system_nrf52840.o
+  00002c0e-00002c0f  RTC0_IRQHandler                     2   2  Code  RX  ses_startup_nrf52840.o
+  00002c10-00002c41  errata_120                         50   4  Code  RX  system_nrf52840.o
+  00002c42-00002c43  TEMP_IRQHandler                     2   2  Code  RX  ses_startup_nrf52840.o
+  00002c44-00002ca1  errata_136                         94   4  Code  RX  system_nrf52840.o
+  00002ca2-00002ca3  RNG_IRQHandler                      2   2  Code  RX  ses_startup_nrf52840.o
+  00002ca4-00002ca5  OS_Idle                             2   4  Code  RX  RTOSInit_nRF5x.o
+  00002ca6-00002ca7  ECB_IRQHandler                      2   2  Code  RX  ses_startup_nrf52840.o
+  00002ca8-00002ca9  CCM_AAR_IRQHandler                  2   2  Code  RX  ses_startup_nrf52840.o
+  00002caa-00002cab  WDT_IRQHandler                      2   2  Code  RX  ses_startup_nrf52840.o
+  00002cac-00002cad  RTC1_IRQHandler                     2   2  Code  RX  ses_startup_nrf52840.o
+  00002cae-00002caf  QDEC_IRQHandler                     2   2  Code  RX  ses_startup_nrf52840.o
+  00002cb0-00002cb1  COMP_LPCOMP_IRQHandler              2   2  Code  RX  ses_startup_nrf52840.o
+  00002cb2-00002cb3  SWI0_EGU0_IRQHandler                2   2  Code  RX  ses_startup_nrf52840.o
+  00002cb4-00002cb5  SWI1_EGU1_IRQHandler                2   2  Code  RX  ses_startup_nrf52840.o
+  00002cb6-00002cb7  SWI2_EGU2_IRQHandler                2   2  Code  RX  ses_startup_nrf52840.o
+  00002cb8-00002cb9  SWI3_EGU3_IRQHandler                2   2  Code  RX  ses_startup_nrf52840.o
+  00002cba-00002cbb  SWI4_EGU4_IRQHandler                2   2  Code  RX  ses_startup_nrf52840.o
+  00002cbc-00002cbd  SWI5_EGU5_IRQHandler                2   2  Code  RX  ses_startup_nrf52840.o
+  00002cbe-00002cbf  TIMER3_IRQHandler                   2   2  Code  RX  ses_startup_nrf52840.o
+  00002cc0-00002cc1  TIMER4_IRQHandler                   2   2  Code  RX  ses_startup_nrf52840.o
+  00002cc2-00002cc3  PWM0_IRQHandler                     2   2  Code  RX  ses_startup_nrf52840.o
+  00002cc4-00002cc5  PDM_IRQHandler                      2   2  Code  RX  ses_startup_nrf52840.o
+  00002cc6-00002cc7  MWU_IRQHandler                      2   2  Code  RX  ses_startup_nrf52840.o
+  00002cc8-00002cc9  PWM1_IRQHandler                     2   2  Code  RX  ses_startup_nrf52840.o
+  00002cca-00002ccb  PWM2_IRQHandler                     2   2  Code  RX  ses_startup_nrf52840.o
+  00002ccc-00002ccd  SPIM2_SPIS2_SPI2_IRQHandler
+                                                         2   2  Code  RX  ses_startup_nrf52840.o
+  00002cce-00002ccf  RTC2_IRQHandler                     2   2  Code  RX  ses_startup_nrf52840.o
+  00002cd0-00002cd1  I2S_IRQHandler                      2   2  Code  RX  ses_startup_nrf52840.o
+  00002cd2-00002cd3  FPU_IRQHandler                      2   2  Code  RX  ses_startup_nrf52840.o
+  00002cd4-00002cd5  UARTE1_IRQHandler                   2   2  Code  RX  ses_startup_nrf52840.o
+  00002cd6-00002cd7  QSPI_IRQHandler                     2   2  Code  RX  ses_startup_nrf52840.o
+  00002cd8-00002cd9  CRYPTOCELL_IRQHandler               2   2  Code  RX  ses_startup_nrf52840.o
+  00002cda-00002cdb  PWM3_IRQHandler                     2   2  Code  RX  ses_startup_nrf52840.o
+  00002cdc-00002cdd  SPIM3_IRQHandler                    2   2  Code  RX  ses_startup_nrf52840.o
+  00002cde-00002cdf  Dummy_Handler                       2   2  Code  RX  ses_startup_nrf52840.o
+  00002ce0-00002d2d  OS_GetCPUState                     78   2  Code  RX  OS_ARMv7M_GetCPUState.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  00002d2e-00002d37  OS_STACK_GetSysStackBase           10   2  Code  RX  OS_StackInfo.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  00002d38-00003015  OS_ChangeTask_VFP                 734   2  Code  RX  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  00003016-000030bf  OS_MakeTaskReady                  170   2  Code  RX  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  000030c0-000030dd  OS_EnterRegionFunc                 30   2  Code  RX  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  000030de-00003117  OS_SaveMainStack                   58   2  Code  RX  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  00003118-0000311d  OS_TerminateError                   6   2  Code  RX  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0000311e-00003163  OS_IsRunning                       70   2  Code  RX  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  00003164-0000322d  OS_TICK_Handle                    202   2  Code  RX  OS_SysTick.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0000322e-00003253  OS_TIME_GetTicks                   38   2  Code  RX  OS_Timing.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  00003254-00003281  fwrite                             46   2  Code  RX  fileops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003282-0000329b  __SEGGER_RTL_float64_isnan
+                                                        26   2  Code  RX  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0000329c-000032b1  __SEGGER_RTL_float64_isinf
+                                                        22   2  Code  RX  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000032b2-000032cf  __SEGGER_RTL_float64_isnormal
+                                                        30   2  Code  RX  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000032d0-00003315  ldexp                              70   2  Code  RX  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003316-00003327  __SEGGER_RTL_pre_padding           18   2  Code  RX  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003328-00003331  __SEGGER_RTL_stream_write          10   2  Code  RX  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003332-0000335b  printf                             42   2  Code  RX  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0000335c-00003361  __SEGGER_RTL_X_file_write           6   2  Code  RX  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003362-000033c7  _DoInit                           102   2  Code  RX  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000033c8-000033dd  _GetAvailWriteSpace                22   2  Code  RX  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000033de-00003433  _WriteBlocking                     86   2  Code  RX  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003434-0000348d  SEGGER_RTT_WriteNoLock             90   2  Code  RX  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0000348e-000034c3  SEGGER_RTT_Write                   54   2  Code  RX  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000034c4-000034f9  strstr                             54   2  Code  RX  strops.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000034fa-00003507  __SEGGER_RTL_ascii_wctomb          14   2  Code  RX  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003508-00003515  __SEGGER_RTL_ascii_tolower
+                                                        14   2  Code  RX  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003516-00003523  __SEGGER_RTL_ascii_towlower
+                                                        14   2  Code  RX  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003524-0000352f  reset_handler                      12   2  Code  RX  ses_startup_nrf_common.o
+  00003530-00003543  OS_STACK_GetSysStackSize           20   2  Code  RX  OS_StackInfo.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  00003544-000035d3  OS_InsertTask                     144   2  Code  RX  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  000035d4-000035f3  OS_TaskInit                        32   2  Code  RX  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  000035f4-0000365b  OS_TASK_LeaveRegion               104   2  Code  RX  OS_Task.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0000365c-000036e3  OS__TIME_GetCycles                136   2  Code  RX  OS_Timing.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  000036e4-000036e7  __SEGGER_RTL_float64_signbit
+                                                         4   2  Code  RX  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000036e8-0000371b  frexp                              52   2  Code  RX  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0000371c-00003723  abs                                 8   2  Code  RX  intops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003724-000037a7  __SEGGER_RTL_putc                 132   2  Code  RX  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000037a8-000037c3  __SEGGER_RTL_prin_flush            28   2  Code  RX  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000037c4-000037df  __SEGGER_RTL_print_padding
+                                                        28   2  Code  RX  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000037e0-000037fb  vfprintf                           28   2  Code  RX  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000037fc-00003867  vfprintf_l                        108   2  Code  RX  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003868-0000389f  __SEGGER_RTL_X_file_stat           56   2  Code  RX  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000038a0-000038a3  __SEGGER_RTL_X_file_bufsize
+                                                         4   2  Code  RX  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000038a4-000038e7  _WriteNoCheck                      68   2  Code  RX  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000038e8-000038ff  __SEGGER_RTL_init_heap             24   2  Code  RX  heapops_basic.o (heapops_basic_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003900-0000392b  strlen                             44   2  Code  RX  strops.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0000392c-00003977  strnlen                            76   2  Code  RX  strops.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003978-0000398f  __SEGGER_RTL_current_locale
+                                                        24   2  Code  RX  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003990-000039c3  __SEGGER_RTL_ascii_mbtowc          52   2  Code  RX  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000039c4-000039e3  __SEGGER_RTL_ascii_isctype
+                                                        32   2  Code  RX  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000039e4-000039ef  __SEGGER_RTL_ascii_toupper
+                                                        12   2  Code  RX  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  000039f0-00003a0f  __SEGGER_RTL_ascii_iswctype
+                                                        32   2  Code  RX  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003a10-00003a1b  __SEGGER_RTL_ascii_towupper
+                                                        12   2  Code  RX  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003a1c-00003a46  [.rodata..L.str.1]                 43   1  Cnst  RO  Main.o
+  00003a47-00003a51  [.rodata..L.str.12]                11   1  Cnst  RO  Main.o
+  00003a52-00003a68  [.rodata..L.str.20]                23   1  Cnst  RO  Main.o
+  00003a69-00003a73  [.rodata..L.str.24]                11   1  Cnst  RO  Main.o
+  00003a74-00003a7a  [.rodata.libc..L.str]               7   1  Cnst  RO  __SEGGER_RTL_vfprintf_float_long.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003a7b-00003ad1  __SEGGER_RTL_c_locale_month_names
+                                                        87   1  Cnst  RO  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003ad2-00003ad8  __SEGGER_RTL_c_locale_am_pm_indicator
+                                                         7   1  Cnst  RO  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003ad9-00003ae7  __SEGGER_RTL_c_locale_date_time_format
+                                                        15   1  Cnst  RO  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003ae8-00003b09  [.rodata..L.str]                   34   1  Cnst  RO  Main.o
+  00003b0a-00003b1f  [.rodata..L.str.2]                 22   1  Cnst  RO  Main.o
+  00003b20-00003b49  [.rodata..L.str.5]                 42   1  Cnst  RO  Main.o
+  00003b4a-00003b4f  [.rodata..L.str.8]                  6   1  Cnst  RO  Main.o
+  00003b50-00003b59  [.rodata..L.str.11]                10   1  Cnst  RO  Main.o
+  00003b5a-00003b63  [.rodata..L.str.14]                10   1  Cnst  RO  Main.o
+  00003b64-00003b6d  [.rodata..L.str.15]                10   1  Cnst  RO  Main.o
+  00003b6e-00003b77  [.rodata..L.str.26]                10   1  Cnst  RO  Main.o
+  00003b78-00003bb1  __SEGGER_RTL_c_locale_day_names
+                                                        58   1  Cnst  RO  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003bb2-00003bb3  [.rodata.libc..L.str]               2   1  Cnst  RO  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003bb4-00003bb5  __SEGGER_RTL_data_utf8_period
+                                                         2   1  Cnst  RO  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003bb6-00003bda  [.rodata..L.str.3]                 37   1  Cnst  RO  Main.o
+  00003bdb-00003bfb  [.rodata..L.str.4]                 33   1  Cnst  RO  Main.o
+  00003bfc-00003c0c  [.rodata..L.str.9]                 17   1  Cnst  RO  Main.o
+  00003c0d-00003c21  [.rodata..L.str.10]                21   1  Cnst  RO  Main.o
+  00003c22-00003c2e  [.rodata..L.str.13]                13   1  Cnst  RO  Main.o
+  00003c2f-00003c3b  [.rodata..L.str.25]                13   1  Cnst  RO  Main.o
+  00003c3c-00003c40  [.rodata.libc..L.str.1]             5   1  Cnst  RO  __SEGGER_RTL_vfprintf_float_long.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003c41-00003c45  [.rodata.libc..L.str.2]             5   1  Cnst  RO  __SEGGER_RTL_vfprintf_float_long.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003c46-00003c4a  [.rodata.libc..L.str.3]             5   1  Cnst  RO  __SEGGER_RTL_vfprintf_float_long.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003c4b-00003c4f  [.rodata.libc..L.str.4]             5   1  Cnst  RO  __SEGGER_RTL_vfprintf_float_long.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003c50-00003c60  _DoInit._aInitStr                  17   1  Cnst  RO  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003c61-00003c69  [.rodata.libc..L.str]               9   1  Cnst  RO  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003c6a-00003c72  __SEGGER_RTL_c_locale_date_format
+                                                         9   1  Cnst  RO  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003c73-00003c7b  __SEGGER_RTL_c_locale_time_format
+                                                         9   1  Cnst  RO  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003c7c-00003c98  __SEGGER_RTL_c_locale_abbrev_day_names
+                                                        29   1  Cnst  RO  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003c99-00003cc9  __SEGGER_RTL_c_locale_abbrev_month_names
+                                                        49   1  Cnst  RO  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003cca-00003cca  __SEGGER_RTL_data_empty_string
+                                                         1   1  Cnst  RO  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003ccb-00003cd7  __SEGGER_RTL_ascii_ctype_mask
+                                                        13   1  Cnst  RO  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003cd8-00003cdb  [.init_array]                       4   4  ----  --  ses_startup_nrf_common.o
+  00003cdc-00003d0f  [.rodata..L.str.6]                 52   1  Cnst  RO  Main.o
+  00003d10-00003d17  [.rodata..L.str.7]                  8   1  Cnst  RO  Main.o
+  00003d18-00003d23  [.rodata..L.str.16]                12   1  Cnst  RO  Main.o
+  00003d24-00003d37  [.rodata..L.str.17]                20   1  Cnst  RO  Main.o
+  00003d38-00003d73  [.rodata..L.str.18]                60   1  Cnst  RO  Main.o
+  00003d74-00003d87  [.rodata..L.str.19]                20   1  Cnst  RO  Main.o
+  00003d88-00003d97  [.rodata..L.str.21]                16   1  Cnst  RO  Main.o
+  00003d98-00003d9b  [.rodata..L.str.22]                 4   1  Cnst  RO  Main.o
+  00003d9c-00003da7  [.rodata..L.str.23]                12   1  Cnst  RO  Main.o
+  00003da8-00003db7  __SEGGER_RTL_hex_uc                16   1  Cnst  RO  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003db8-00003dc7  __SEGGER_RTL_hex_lc                16   1  Cnst  RO  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003dc8-00003dcb  [.rodata.libc..L.str.5]             4   1  Cnst  RO  __SEGGER_RTL_vfprintf_float_long.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003dcc-00003dcf  [.rodata.libc..L.str.6]             4   1  Cnst  RO  __SEGGER_RTL_vfprintf_float_long.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003dd0-00003e4f  __SEGGER_RTL_ascii_ctype_map
+                                                       128   1  Cnst  RO  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003e50-00003e73  __SEGGER_init_ctors                36   4  Code  RX  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003e74-00003e9b  __SEGGER_init_table__              40   4  Cnst  RO  [ Linker created ]
+  00003e9c-00003ec7  __SEGGER_init_data__               44   4  Cnst  RO  [ Linker created ]
+  00003ec8-00003ed9  __SEGGER_init_zero                 18   2  Code  RX  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003eda-00003eed  __SEGGER_init_copy                 20   2  Code  RX  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  00003eee-1fffffff  ( UNUSED .=.+536854802 )   536 854 802
+                                                             -  ----  -   -
+  20000000-2000007f  OS_Global                         128   8  Zero  ZI  OS_Global.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  20000080-20000127  _SEGGER_RTT                       168   4  Zero  ZI  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  20000128-2000016b  HardFaultRegs                      68   4  Zero  ZI  SEGGER_HardFaultHandler.o
+  2000016c-2000019b  OS_SysTimer_Settings               48   4  Zero  ZI  OS_Global.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  2000019c-2000019f  __SEGGER_RTL_stdout_file            4   4  Zero  ZI  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  200001a0-200001a3  __SEGGER_RTL_stdin_file             4   4  Zero  ZI  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  200001a4-200001a7  __SEGGER_RTL_stderr_file            4   4  Zero  ZI  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  200001a8-200001ab  __SEGGER_RTL_locale_ptr             4   4  Zero  ZI  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  200001ac-200001af  __SEGGER_RTL_heap_globals.0
+                                                         4   4  Zero  ZI  heapops_basic.o (heapops_basic_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  200001b0-200001b3  _pfUSBISRHandler                    4   4  Zero  ZI  BSP_USB.o
+  200001b4-200001b7  _pfOnTx                             4   4  Zero  ZI  JLINKMEM_Process.o
+  200001b8-200001bb  _pfOnRx                             4   4  Zero  ZI  JLINKMEM_Process.o
+  200001bc-200001bf  _pfGetNextChar                      4   4  Zero  ZI  JLINKMEM_Process.o
+  200001c0-200001c3  _pTxBuf                             4   4  Zero  ZI  JLINKMEM_Process.o
+  200001c4-200001c7  _pRxBuf                             4   4  Zero  ZI  JLINKMEM_Process.o
+  200001c8-200001cb  _TxTimeoutTimer                     4   4  Zero  ZI  JLINKMEM_Process.o
+  200001cc-200001cf  _TxIsPending                        4   4  Zero  ZI  JLINKMEM_Process.o
+  200001d0-200001d3  _TxBufLocked                        4   4  Zero  ZI  JLINKMEM_Process.o
+  200001d4-200001d7  _OS_ProfilingExTime                 4   4  Zero  ZI  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  200001d8-200001db  _IsInited                           4   4  Zero  ZI  JLINKMEM_Process.o
+  200001dc-200001df  _Continue                           4   4  Zero  ZI  SEGGER_HardFaultHandler.o
+  200001e0-200001e3  _BaseAddr                           4   4  Zero  ZI  JLINKMEM_Process.o
+  200001e4-200001e7  SEGGER_SYSVIEW_TickCnt              4   4  Zero  ZI  SEGGER_SYSVIEW.o
+  200001e8-200001eb  JLINKMEM_Process._TxTimeout
+                                                         4   4  Zero  ZI  JLINKMEM_Process.o
+  200001ec-200005eb  _acUpBuffer                     1 024   1  Zero  ZI  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  200005ec-200005fb  _acDownBuffer                      16   1  Zero  ZI  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  200005fc-200005fc  _TxPendingData                      1   1  Zero  ZI  JLINKMEM_Process.o
+  200005fd-200005ff  ( UNUSED .=.+3 )                    3   -  ----  -   -
+  20000600-20000613  __SEGGER_RTL_global_locale
+                                                        20   4  Init  RW  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  20000614-20000617  stdout                              4   4  Init  RW  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  20000618-2000061b  stdin                               4   4  Init  RW  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  2000061c-2000061f  stderr                              4   4  Init  RW  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  20000620-20000623  TicksPerTimeUnit                    4   4  Init  RW  OS_SysTick.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  20000624-20000627  SystemCoreClock                     4   4  Init  RW  system_nrf52840.o
+  20000628-2000062b  IntsPerTimeUnit                     4   4  Init  RW  OS_SysTick.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  2000062c-2000062f  ( UNUSED .=.+4 )                    4   -  ----  -   -
+  20000630-20000b2f  [.bss.block.heap]               1 280   8  None  ZI  [ Linker created ]
+  20000b30-2003fbff  ( UNUSED .=.+258256 )         258 256   -  ----  -   -
+  2003fc00-2003ffff  [.bss.block.stack]              1 024   8  None  ZI  [ Linker created ]
+
+
+***********************************************************************************************
+***                                                                                         ***
+***                                       SYMBOL LIST                                       ***
+***                                                                                         ***
+***********************************************************************************************
+
+Function symbols by name:
+
+  Symbol name                   Address        Size  Align  Type  Bd  Object File
+  -------------------------  ----------  ----------  -----  ----  --  -----------
+  CCM_AAR_IRQHandler         0x00002CA9                  2  Code  Wk  ses_startup_nrf52840.o
+  COMP_LPCOMP_IRQHandler     0x00002CB1                  2  Code  Wk  ses_startup_nrf52840.o
+  CRYPTOCELL_IRQHandler      0x00002CD9                  2  Code  Wk  ses_startup_nrf52840.o
+  Dummy_Handler              0x00002CDF                  2  Code  Wk  ses_startup_nrf52840.o
+  ECB_IRQHandler             0x00002CA7                  2  Code  Wk  ses_startup_nrf52840.o
+  FPU_IRQHandler             0x00002CD3                  2  Code  Wk  ses_startup_nrf52840.o
+  GPIOTE_IRQHandler          0x00002AB3                  2  Code  Wk  ses_startup_nrf52840.o
+  HardFaultHandler           0x00000D71         280      4  Code  Gb  SEGGER_HardFaultHandler.o
+  HardFault_Handler          0x00002519                  4  Code  Gb  HardFaultHandler.o
+  I2S_IRQHandler             0x00002CD1                  2  Code  Wk  ses_startup_nrf52840.o
+  JLINKMEM_Process           0x000028F5         178      4  Code  Gb  JLINKMEM_Process.o
+  MWU_IRQHandler             0x00002CC7                  2  Code  Wk  ses_startup_nrf52840.o
+  NFCT_IRQHandler            0x00002A3F                  2  Code  Wk  ses_startup_nrf52840.o
+  NMI_Handler                0x0000272F                  2  Code  Wk  ses_startup_nrf52840.o
+  OS_AssertCPUInISRMode      0x00000E89          44      4  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_AssertCPUNotInIllegalState
+                             0x00000EB5          40      4  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_ChangeTask_VFP          0x00002D39         734      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_EnterRegionFunc         0x000030C1          30      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_Error                   0x00000865          48      4  Code  Gb  OS_Error.o
+  OS_GetCPUState             0x00002CE1          78      2  Code  Gb  OS_ARMv7M_GetCPUState.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_Idle                    0x00002CA5           2      4  Code  Gb  RTOSInit_nRF5x.o
+  OS_InsertTask              0x00003545         144      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_IsRunning               0x0000311F          70      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_MakeTaskReady           0x00003017         170      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_STACK_GetSysStackBase   0x00002D2F          10      2  Code  Gb  OS_StackInfo.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_STACK_GetSysStackSize   0x00003531          20      2  Code  Gb  OS_StackInfo.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_SaveMainStack           0x000030DF          58      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_StartASM                0x000025F3                  4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_StartTask               0x000025DF                  4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_StopASM                 0x0000263B                  4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_Switch                  0x00002651                  4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_SwitchAfterISR_CortexM  0x0000266F                  4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_SwitchFromInt           0x00002675                  4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_TASK_LeaveRegion        0x000035F5         104      2  Code  Gb  OS_Task.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_TICK_Handle             0x00003165         202      2  Code  Gb  OS_SysTick.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_TIME_GetTicks           0x0000322F          38      2  Code  Gb  OS_Timing.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_TaskInit                0x000035D5          32      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_TerminateError          0x00003119           6      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS__TIME_GetCycles         0x0000365D         136      2  Code  Gb  OS_Timing.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  PDM_IRQHandler             0x00002CC5                  2  Code  Wk  ses_startup_nrf52840.o
+  POWER_CLOCK_IRQHandler     0x0000280F                  2  Code  Wk  ses_startup_nrf52840.o
+  PWM0_IRQHandler            0x00002CC3                  2  Code  Wk  ses_startup_nrf52840.o
+  PWM1_IRQHandler            0x00002CC9                  2  Code  Wk  ses_startup_nrf52840.o
+  PWM2_IRQHandler            0x00002CCB                  2  Code  Wk  ses_startup_nrf52840.o
+  PWM3_IRQHandler            0x00002CDB                  2  Code  Wk  ses_startup_nrf52840.o
+  PendSV_Handler             0x0000254D                  4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  QDEC_IRQHandler            0x00002CAF                  2  Code  Wk  ses_startup_nrf52840.o
+  QSPI_IRQHandler            0x00002CD7                  2  Code  Wk  ses_startup_nrf52840.o
+  RADIO_IRQHandler           0x00002873                  2  Code  Wk  ses_startup_nrf52840.o
+  RNG_IRQHandler             0x00002CA3                  2  Code  Wk  ses_startup_nrf52840.o
+  RTC0_IRQHandler            0x00002C0F                  2  Code  Wk  ses_startup_nrf52840.o
+  RTC1_IRQHandler            0x00002CAD                  2  Code  Wk  ses_startup_nrf52840.o
+  RTC2_IRQHandler            0x00002CCF                  2  Code  Wk  ses_startup_nrf52840.o
+  Reset_Handler              0x00003525                  2  Code  Gb  ses_startup_nrf_common.o
+  SAADC_IRQHandler           0x00002B13                  2  Code  Wk  ses_startup_nrf52840.o
+  SEGGER_RTT_Write           0x0000348F          54      2  Code  Gb  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  SEGGER_RTT_WriteNoLock     0x00003435          90      2  Code  Gb  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler
+                             0x000029A7                  2  Code  Wk  ses_startup_nrf52840.o
+  SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
+                             0x00002A1B                  2  Code  Wk  ses_startup_nrf52840.o
+  SPIM2_SPIS2_SPI2_IRQHandler
+                             0x00002CCD                  2  Code  Wk  ses_startup_nrf52840.o
+  SPIM3_IRQHandler           0x00002CDD                  2  Code  Wk  ses_startup_nrf52840.o
+  SVC_Handler                0x000027CF                  2  Code  Wk  ses_startup_nrf52840.o
+  SWI0_EGU0_IRQHandler       0x00002CB3                  2  Code  Wk  ses_startup_nrf52840.o
+  SWI1_EGU1_IRQHandler       0x00002CB5                  2  Code  Wk  ses_startup_nrf52840.o
+  SWI2_EGU2_IRQHandler       0x00002CB7                  2  Code  Wk  ses_startup_nrf52840.o
+  SWI3_EGU3_IRQHandler       0x00002CB9                  2  Code  Wk  ses_startup_nrf52840.o
+  SWI4_EGU4_IRQHandler       0x00002CBB                  2  Code  Wk  ses_startup_nrf52840.o
+  SWI5_EGU5_IRQHandler       0x00002CBD                  2  Code  Wk  ses_startup_nrf52840.o
+  SysTick_Handler            0x00000ACD         348      4  Code  Gb  RTOSInit_nRF5x.o
+  SystemCoreClockUpdate      0x00000895          20      4  Code  Gb  system_nrf52840.o
+  SystemInit                 0x000008A9         548      4  Code  Gb  system_nrf52840.o
+  TEMP_IRQHandler            0x00002C43                  2  Code  Wk  ses_startup_nrf52840.o
+  TIMER0_IRQHandler          0x00002B73                  2  Code  Wk  ses_startup_nrf52840.o
+  TIMER1_IRQHandler          0x00002BA7                  2  Code  Wk  ses_startup_nrf52840.o
+  TIMER2_IRQHandler          0x00002BDB                  2  Code  Wk  ses_startup_nrf52840.o
+  TIMER3_IRQHandler          0x00002CBF                  2  Code  Wk  ses_startup_nrf52840.o
+  TIMER4_IRQHandler          0x00002CC1                  2  Code  Wk  ses_startup_nrf52840.o
+  UARTE0_UART0_IRQHandler    0x000028F3                  2  Code  Wk  ses_startup_nrf52840.o
+  UARTE1_IRQHandler          0x00002CD5                  2  Code  Wk  ses_startup_nrf52840.o
+  USBD_IRQHandler            0x00000C29         328      4  Code  Gb  BSP_USB.o
+  WDT_IRQHandler             0x00002CAB                  2  Code  Wk  ses_startup_nrf52840.o
+  _DoInit                    0x00003363         102      2  Code  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  _DropTxData                0x00002A1D          34      4  Code  Lc  JLINKMEM_Process.o
+  _FillTxBuf                 0x000007B1         180      4  Code  Lc  JLINKMEM_Process.o
+  _GetAvailWriteSpace        0x000033C9          22      2  Code  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  _Init                      0x000029A9         114      4  Code  Lc  JLINKMEM_Process.o
+  _LockTxBuf                 0x0000075D          84      4  Code  Lc  JLINKMEM_Process.o
+  _Receive                   0x000006CD         144      4  Code  Lc  JLINKMEM_Process.o
+  _Send                      0x00002A41         114      4  Code  Lc  JLINKMEM_Process.o
+  _WriteBlocking             0x000033DF          86      2  Code  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  _WriteNoCheck              0x000038A5          68      2  Code  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __NVIC_SystemReset         0x000006A9          36      4  Code  Lc  Main.o
+  __SEGGER_RTL_X_file_bufsize
+                             0x000038A1           4      2  Code  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_X_file_stat   0x00003869          56      2  Code  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_X_file_write  0x0000335D           6      2  Code  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_ascii_isctype
+                             0x000039C5          32      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_ascii_iswctype
+                             0x000039F1          32      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_ascii_mbtowc  0x00003991          52      2  Code  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_ascii_tolower
+                             0x00003509          14      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_ascii_toupper
+                             0x000039E5          12      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_ascii_towlower
+                             0x00003517          14      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_ascii_towupper
+                             0x00003A11          12      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_ascii_wctomb  0x000034FB          14      2  Code  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_current_locale
+                             0x00003979          24      2  Code  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_float64_isinf
+                             0x0000329D          22      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_float64_isnan
+                             0x00003283          26      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_float64_isnormal
+                             0x000032B3          30      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_float64_signbit
+                             0x000036E5           4      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_init_heap     0x000038E9          24      2  Code  Wk  heapops_basic.o (heapops_basic_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_pow10         0x00000491         104      8  Code  Gb  utilops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_pre_padding   0x00003317          18      2  Code  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_prin_flush    0x000037A9          28      2  Code  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_print_padding
+                             0x000037C5          28      2  Code  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_putc          0x00003725         132      2  Code  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_stream_write  0x00003329          10      2  Code  Lc  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_vfprintf      0x000016FD       3 256      4  Code  Gb  __SEGGER_RTL_vfprintf_float_long.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_vfprintf_float_long
+                             0x000016FD       3 256      4  Code  Gb  __SEGGER_RTL_vfprintf_float_long.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_init_copy         0x00003EDB          20      2  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_init_ctors        0x00003E51          26      4  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_init_done         0x000005EB                  4  Code  Gb  SEGGER_THUMB_Startup.o
+  __SEGGER_init_heap         0x00002501          16      4  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_init_zero         0x00003EC9          18      2  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_d2ulz              0x00001531          62      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_dadd               0x00000EDD         574      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_dcmpeq             0x00001455          48      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_dcmpge             0x00001485          60      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_dcmpgt             0x000014C1          56      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_dcmple             0x00001419          60      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_dcmplt             0x000014F9          56      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_ddiv               0x00001255         450      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_dmul               0x00001125         304      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_dsub               0x0000111D           8      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_memclr             0x00002411         104      4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_memclr4            0x00002411                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_memclr8            0x00002411                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_memcpy             0x000023B5                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_memcpy4            0x000023D3                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_memcpy8            0x000023D3                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_memset             0x00002413                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_memset4            0x00002413                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_memset8            0x00002413                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_ul2d               0x00001571          90      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_uldivmod           0x000015CD         302      4  Code  Wk  intasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __startup_complete         0x000005EB                  4  Code  Gb  SEGGER_THUMB_Startup.o
+  _start                     0x000005E1          14      4  Code  Gb  SEGGER_THUMB_Startup.o
+  abs                        0x0000371D           8      2  Code  Wk  intops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  check_sim_status           0x00000679          48      4  Code  Lc  Main.o
+  connect_network            0x00002811          98      4  Code  Lc  Main.o
+  delay_ms                   0x00000669          16      4  Code  Lc  Main.o
+  disconnect_network         0x000027D1          62      4  Code  Lc  Main.o
+  errata_103                 0x00002BA9          50      4  Code  Lc  system_nrf52840.o
+  errata_115                 0x00002BDD          50      4  Code  Lc  system_nrf52840.o
+  errata_120                 0x00002C11          50      4  Code  Lc  system_nrf52840.o
+  errata_136                 0x00002C45          94      4  Code  Lc  system_nrf52840.o
+  errata_36                  0x00002AB5          94      4  Code  Lc  system_nrf52840.o
+  errata_66                  0x00002B15          94      4  Code  Lc  system_nrf52840.o
+  errata_98                  0x00002B75          50      4  Code  Lc  system_nrf52840.o
+  exit                       0x000005EF           2      4  Code  Gb  SEGGER_THUMB_Startup.o
+  floor                      0x000003B1         224      8  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  fmod                       0x00000201         432      8  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  frexp                      0x000036E9          52      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  fwrite                     0x00003255          46      2  Code  Wk  fileops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  ldexp                      0x000032D1          70      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  main                       0x000005F5         116      4  Code  Gb  Main.o
+  manage_connection          0x000026BD         114      4  Code  Lc  Main.o
+  memcpy                     0x000023B5          92      4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  memset                     0x00002419                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  nRFInitialize              0x00002531                  4  Code  Gb  ses_startup_nrf52840.o
+  printf                     0x00003333          42      2  Code  Wk  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  reset_handler              0x00003525                  2  Code  Gb  ses_startup_nrf_common.o
+  send_telemetry             0x00002731         158      4  Code  Lc  Main.o
+  strlen                     0x00003901          44      2  Code  Wk  strops.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  strnlen                    0x0000392D          76      2  Code  Wk  strops.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  strstr                     0x000034C5          54      2  Code  Wk  strops.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  uart_send_command          0x00002875         126      4  Code  Lc  Main.o
+  vfprintf                   0x000037E1          28      2  Code  Wk  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  vfprintf_l                 0x000037FD         108      2  Code  Wk  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+
+Function symbols by address:
+
+     Address  Symbol name                      Size  Align  Type  Bd  Object File
+  ----------  -------------------------  ----------  -----  ----  --  -----------
+  0x00000201  fmod                              432      8  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000003B1  floor                             224      8  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00000491  __SEGGER_RTL_pow10                104      8  Code  Gb  utilops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000005E1  _start                             14      4  Code  Gb  SEGGER_THUMB_Startup.o
+  0x000005EB  __startup_complete                         4  Code  Gb  SEGGER_THUMB_Startup.o
+  0x000005EB  __SEGGER_init_done                         4  Code  Gb  SEGGER_THUMB_Startup.o
+  0x000005EF  exit                                2      4  Code  Gb  SEGGER_THUMB_Startup.o
+  0x000005F5  main                              116      4  Code  Gb  Main.o
+  0x00000669  delay_ms                           16      4  Code  Lc  Main.o
+  0x00000679  check_sim_status                   48      4  Code  Lc  Main.o
+  0x000006A9  __NVIC_SystemReset                 36      4  Code  Lc  Main.o
+  0x000006CD  _Receive                          144      4  Code  Lc  JLINKMEM_Process.o
+  0x0000075D  _LockTxBuf                         84      4  Code  Lc  JLINKMEM_Process.o
+  0x000007B1  _FillTxBuf                        180      4  Code  Lc  JLINKMEM_Process.o
+  0x00000865  OS_Error                           48      4  Code  Gb  OS_Error.o
+  0x00000895  SystemCoreClockUpdate              20      4  Code  Gb  system_nrf52840.o
+  0x000008A9  SystemInit                        548      4  Code  Gb  system_nrf52840.o
+  0x00000ACD  SysTick_Handler                   348      4  Code  Gb  RTOSInit_nRF5x.o
+  0x00000C29  USBD_IRQHandler                   328      4  Code  Gb  BSP_USB.o
+  0x00000D71  HardFaultHandler                  280      4  Code  Gb  SEGGER_HardFaultHandler.o
+  0x00000E89  OS_AssertCPUInISRMode              44      4  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x00000EB5  OS_AssertCPUNotInIllegalState
+                                                 40      4  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x00000EDD  __aeabi_dadd                      574      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x0000111D  __aeabi_dsub                        8      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00001125  __aeabi_dmul                      304      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00001255  __aeabi_ddiv                      450      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00001419  __aeabi_dcmple                     60      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00001455  __aeabi_dcmpeq                     48      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00001485  __aeabi_dcmpge                     60      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000014C1  __aeabi_dcmpgt                     56      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000014F9  __aeabi_dcmplt                     56      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00001531  __aeabi_d2ulz                      62      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00001571  __aeabi_ul2d                       90      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000015CD  __aeabi_uldivmod                  302      4  Code  Wk  intasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000016FD  __SEGGER_RTL_vfprintf_float_long
+                                              3 256      4  Code  Gb  __SEGGER_RTL_vfprintf_float_long.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000016FD  __SEGGER_RTL_vfprintf           3 256      4  Code  Gb  __SEGGER_RTL_vfprintf_float_long.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000023B5  memcpy                             92      4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000023B5  __aeabi_memcpy                             4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000023D3  __aeabi_memcpy8                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000023D3  __aeabi_memcpy4                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00002411  __aeabi_memclr8                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00002411  __aeabi_memclr4                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00002411  __aeabi_memclr                    104      4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00002413  __aeabi_memset8                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00002413  __aeabi_memset4                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00002413  __aeabi_memset                             4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00002419  memset                                     4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00002501  __SEGGER_init_heap                 16      4  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00002519  HardFault_Handler                          4  Code  Gb  HardFaultHandler.o
+  0x00002531  nRFInitialize                              4  Code  Gb  ses_startup_nrf52840.o
+  0x0000254D  PendSV_Handler                             4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x000025DF  OS_StartTask                               4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x000025F3  OS_StartASM                                4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x0000263B  OS_StopASM                                 4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x00002651  OS_Switch                                  4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x0000266F  OS_SwitchAfterISR_CortexM                  4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x00002675  OS_SwitchFromInt                           4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x000026BD  manage_connection                 114      4  Code  Lc  Main.o
+  0x0000272F  NMI_Handler                                2  Code  Wk  ses_startup_nrf52840.o
+  0x00002731  send_telemetry                    158      4  Code  Lc  Main.o
+  0x000027CF  SVC_Handler                                2  Code  Wk  ses_startup_nrf52840.o
+  0x000027D1  disconnect_network                 62      4  Code  Lc  Main.o
+  0x0000280F  POWER_CLOCK_IRQHandler                     2  Code  Wk  ses_startup_nrf52840.o
+  0x00002811  connect_network                    98      4  Code  Lc  Main.o
+  0x00002873  RADIO_IRQHandler                           2  Code  Wk  ses_startup_nrf52840.o
+  0x00002875  uart_send_command                 126      4  Code  Lc  Main.o
+  0x000028F3  UARTE0_UART0_IRQHandler                    2  Code  Wk  ses_startup_nrf52840.o
+  0x000028F5  JLINKMEM_Process                  178      4  Code  Gb  JLINKMEM_Process.o
+  0x000029A7  SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler
+                                                         2  Code  Wk  ses_startup_nrf52840.o
+  0x000029A9  _Init                             114      4  Code  Lc  JLINKMEM_Process.o
+  0x00002A1B  SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
+                                                         2  Code  Wk  ses_startup_nrf52840.o
+  0x00002A1D  _DropTxData                        34      4  Code  Lc  JLINKMEM_Process.o
+  0x00002A3F  NFCT_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  0x00002A41  _Send                             114      4  Code  Lc  JLINKMEM_Process.o
+  0x00002AB3  GPIOTE_IRQHandler                          2  Code  Wk  ses_startup_nrf52840.o
+  0x00002AB5  errata_36                          94      4  Code  Lc  system_nrf52840.o
+  0x00002B13  SAADC_IRQHandler                           2  Code  Wk  ses_startup_nrf52840.o
+  0x00002B15  errata_66                          94      4  Code  Lc  system_nrf52840.o
+  0x00002B73  TIMER0_IRQHandler                          2  Code  Wk  ses_startup_nrf52840.o
+  0x00002B75  errata_98                          50      4  Code  Lc  system_nrf52840.o
+  0x00002BA7  TIMER1_IRQHandler                          2  Code  Wk  ses_startup_nrf52840.o
+  0x00002BA9  errata_103                         50      4  Code  Lc  system_nrf52840.o
+  0x00002BDB  TIMER2_IRQHandler                          2  Code  Wk  ses_startup_nrf52840.o
+  0x00002BDD  errata_115                         50      4  Code  Lc  system_nrf52840.o
+  0x00002C0F  RTC0_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  0x00002C11  errata_120                         50      4  Code  Lc  system_nrf52840.o
+  0x00002C43  TEMP_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  0x00002C45  errata_136                         94      4  Code  Lc  system_nrf52840.o
+  0x00002CA3  RNG_IRQHandler                             2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CA5  OS_Idle                             2      4  Code  Gb  RTOSInit_nRF5x.o
+  0x00002CA7  ECB_IRQHandler                             2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CA9  CCM_AAR_IRQHandler                         2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CAB  WDT_IRQHandler                             2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CAD  RTC1_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CAF  QDEC_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CB1  COMP_LPCOMP_IRQHandler                     2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CB3  SWI0_EGU0_IRQHandler                       2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CB5  SWI1_EGU1_IRQHandler                       2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CB7  SWI2_EGU2_IRQHandler                       2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CB9  SWI3_EGU3_IRQHandler                       2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CBB  SWI4_EGU4_IRQHandler                       2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CBD  SWI5_EGU5_IRQHandler                       2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CBF  TIMER3_IRQHandler                          2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CC1  TIMER4_IRQHandler                          2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CC3  PWM0_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CC5  PDM_IRQHandler                             2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CC7  MWU_IRQHandler                             2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CC9  PWM1_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CCB  PWM2_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CCD  SPIM2_SPIS2_SPI2_IRQHandler
+                                                         2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CCF  RTC2_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CD1  I2S_IRQHandler                             2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CD3  FPU_IRQHandler                             2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CD5  UARTE1_IRQHandler                          2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CD7  QSPI_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CD9  CRYPTOCELL_IRQHandler                      2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CDB  PWM3_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CDD  SPIM3_IRQHandler                           2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CDF  Dummy_Handler                              2  Code  Wk  ses_startup_nrf52840.o
+  0x00002CE1  OS_GetCPUState                     78      2  Code  Gb  OS_ARMv7M_GetCPUState.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x00002D2F  OS_STACK_GetSysStackBase           10      2  Code  Gb  OS_StackInfo.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x00002D39  OS_ChangeTask_VFP                 734      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x00003017  OS_MakeTaskReady                  170      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x000030C1  OS_EnterRegionFunc                 30      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x000030DF  OS_SaveMainStack                   58      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x00003119  OS_TerminateError                   6      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x0000311F  OS_IsRunning                       70      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x00003165  OS_TICK_Handle                    202      2  Code  Gb  OS_SysTick.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x0000322F  OS_TIME_GetTicks                   38      2  Code  Gb  OS_Timing.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x00003255  fwrite                             46      2  Code  Wk  fileops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003283  __SEGGER_RTL_float64_isnan
+                                                 26      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x0000329D  __SEGGER_RTL_float64_isinf
+                                                 22      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000032B3  __SEGGER_RTL_float64_isnormal
+                                                 30      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000032D1  ldexp                              70      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003317  __SEGGER_RTL_pre_padding           18      2  Code  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003329  __SEGGER_RTL_stream_write          10      2  Code  Lc  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003333  printf                             42      2  Code  Wk  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x0000335D  __SEGGER_RTL_X_file_write           6      2  Code  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003363  _DoInit                           102      2  Code  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000033C9  _GetAvailWriteSpace                22      2  Code  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000033DF  _WriteBlocking                     86      2  Code  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003435  SEGGER_RTT_WriteNoLock             90      2  Code  Gb  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x0000348F  SEGGER_RTT_Write                   54      2  Code  Gb  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000034C5  strstr                             54      2  Code  Wk  strops.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000034FB  __SEGGER_RTL_ascii_wctomb          14      2  Code  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003509  __SEGGER_RTL_ascii_tolower
+                                                 14      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003517  __SEGGER_RTL_ascii_towlower
+                                                 14      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003525  reset_handler                              2  Code  Gb  ses_startup_nrf_common.o
+  0x00003525  Reset_Handler                              2  Code  Gb  ses_startup_nrf_common.o
+  0x00003531  OS_STACK_GetSysStackSize           20      2  Code  Gb  OS_StackInfo.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x00003545  OS_InsertTask                     144      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x000035D5  OS_TaskInit                        32      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x000035F5  OS_TASK_LeaveRegion               104      2  Code  Gb  OS_Task.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x0000365D  OS__TIME_GetCycles                136      2  Code  Gb  OS_Timing.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x000036E5  __SEGGER_RTL_float64_signbit
+                                                  4      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000036E9  frexp                              52      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x0000371D  abs                                 8      2  Code  Wk  intops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003725  __SEGGER_RTL_putc                 132      2  Code  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000037A9  __SEGGER_RTL_prin_flush            28      2  Code  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000037C5  __SEGGER_RTL_print_padding
+                                                 28      2  Code  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000037E1  vfprintf                           28      2  Code  Wk  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000037FD  vfprintf_l                        108      2  Code  Wk  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003869  __SEGGER_RTL_X_file_stat           56      2  Code  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000038A1  __SEGGER_RTL_X_file_bufsize
+                                                  4      2  Code  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000038A5  _WriteNoCheck                      68      2  Code  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000038E9  __SEGGER_RTL_init_heap             24      2  Code  Wk  heapops_basic.o (heapops_basic_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003901  strlen                             44      2  Code  Wk  strops.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x0000392D  strnlen                            76      2  Code  Wk  strops.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003979  __SEGGER_RTL_current_locale
+                                                 24      2  Code  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003991  __SEGGER_RTL_ascii_mbtowc          52      2  Code  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000039C5  __SEGGER_RTL_ascii_isctype
+                                                 32      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000039E5  __SEGGER_RTL_ascii_toupper
+                                                 12      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000039F1  __SEGGER_RTL_ascii_iswctype
+                                                 32      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003A11  __SEGGER_RTL_ascii_towupper
+                                                 12      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003E51  __SEGGER_init_ctors                26      4  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003EC9  __SEGGER_init_zero                 18      2  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003EDB  __SEGGER_init_copy                 20      2  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+
+Function symbols by descending size:
+
+  Symbol name                      Size  Align  Type  Bd  Object File
+  -------------------------  ----------  -----  ----  --  -----------
+  __SEGGER_RTL_vfprintf           3 256      4  Code  Gb  __SEGGER_RTL_vfprintf_float_long.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_vfprintf_float_long
+                                  3 256      4  Code  Gb  __SEGGER_RTL_vfprintf_float_long.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  OS_ChangeTask_VFP                 734      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  __aeabi_dadd                      574      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  SystemInit                        548      4  Code  Gb  system_nrf52840.o
+  __aeabi_ddiv                      450      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  fmod                              432      8  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  SysTick_Handler                   348      4  Code  Gb  RTOSInit_nRF5x.o
+  USBD_IRQHandler                   328      4  Code  Gb  BSP_USB.o
+  __aeabi_dmul                      304      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_uldivmod                  302      4  Code  Wk  intasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  HardFaultHandler                  280      4  Code  Gb  SEGGER_HardFaultHandler.o
+  floor                             224      8  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  OS_TICK_Handle                    202      2  Code  Gb  OS_SysTick.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  _FillTxBuf                        180      4  Code  Lc  JLINKMEM_Process.o
+  JLINKMEM_Process                  178      4  Code  Gb  JLINKMEM_Process.o
+  OS_MakeTaskReady                  170      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  send_telemetry                    158      4  Code  Lc  Main.o
+  OS_InsertTask                     144      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  _Receive                          144      4  Code  Lc  JLINKMEM_Process.o
+  OS__TIME_GetCycles                136      2  Code  Gb  OS_Timing.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  __SEGGER_RTL_putc                 132      2  Code  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  uart_send_command                 126      4  Code  Lc  Main.o
+  main                              116      4  Code  Gb  Main.o
+  _Init                             114      4  Code  Lc  JLINKMEM_Process.o
+  _Send                             114      4  Code  Lc  JLINKMEM_Process.o
+  manage_connection                 114      4  Code  Lc  Main.o
+  vfprintf_l                        108      2  Code  Wk  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  OS_TASK_LeaveRegion               104      2  Code  Gb  OS_Task.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  __SEGGER_RTL_pow10                104      8  Code  Gb  utilops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_memclr                    104      4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  _DoInit                           102      2  Code  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  connect_network                    98      4  Code  Lc  Main.o
+  errata_136                         94      4  Code  Lc  system_nrf52840.o
+  errata_36                          94      4  Code  Lc  system_nrf52840.o
+  errata_66                          94      4  Code  Lc  system_nrf52840.o
+  memcpy                             92      4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  SEGGER_RTT_WriteNoLock             90      2  Code  Gb  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_ul2d                       90      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  _WriteBlocking                     86      2  Code  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  _LockTxBuf                         84      4  Code  Lc  JLINKMEM_Process.o
+  OS_GetCPUState                     78      2  Code  Gb  OS_ARMv7M_GetCPUState.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  strnlen                            76      2  Code  Wk  strops.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  OS_IsRunning                       70      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  ldexp                              70      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  _WriteNoCheck                      68      2  Code  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_d2ulz                      62      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  disconnect_network                 62      4  Code  Lc  Main.o
+  __aeabi_dcmpge                     60      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_dcmple                     60      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  OS_SaveMainStack                   58      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  __SEGGER_RTL_X_file_stat           56      2  Code  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_dcmpgt                     56      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_dcmplt                     56      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  SEGGER_RTT_Write                   54      2  Code  Gb  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  strstr                             54      2  Code  Wk  strops.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_ascii_mbtowc          52      2  Code  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  frexp                              52      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  errata_103                         50      4  Code  Lc  system_nrf52840.o
+  errata_115                         50      4  Code  Lc  system_nrf52840.o
+  errata_120                         50      4  Code  Lc  system_nrf52840.o
+  errata_98                          50      4  Code  Lc  system_nrf52840.o
+  OS_Error                           48      4  Code  Gb  OS_Error.o
+  __aeabi_dcmpeq                     48      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  check_sim_status                   48      4  Code  Lc  Main.o
+  fwrite                             46      2  Code  Wk  fileops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  OS_AssertCPUInISRMode              44      4  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  strlen                             44      2  Code  Wk  strops.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  printf                             42      2  Code  Wk  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  OS_AssertCPUNotInIllegalState
+                                     40      4  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_TIME_GetTicks                   38      2  Code  Gb  OS_Timing.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  __NVIC_SystemReset                 36      4  Code  Lc  Main.o
+  _DropTxData                        34      4  Code  Lc  JLINKMEM_Process.o
+  OS_TaskInit                        32      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  __SEGGER_RTL_ascii_isctype
+                                     32      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_ascii_iswctype
+                                     32      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  OS_EnterRegionFunc                 30      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  __SEGGER_RTL_float64_isnormal
+                                     30      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_prin_flush            28      2  Code  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_print_padding
+                                     28      2  Code  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  vfprintf                           28      2  Code  Wk  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_float64_isnan
+                                     26      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_init_ctors                26      4  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_current_locale
+                                     24      2  Code  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_init_heap             24      2  Code  Wk  heapops_basic.o (heapops_basic_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  _GetAvailWriteSpace                22      2  Code  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_float64_isinf
+                                     22      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  OS_STACK_GetSysStackSize           20      2  Code  Gb  OS_StackInfo.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  SystemCoreClockUpdate              20      4  Code  Gb  system_nrf52840.o
+  __SEGGER_init_copy                 20      2  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_pre_padding           18      2  Code  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_init_zero                 18      2  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_init_heap                 16      4  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  delay_ms                           16      4  Code  Lc  Main.o
+  __SEGGER_RTL_ascii_tolower
+                                     14      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_ascii_towlower
+                                     14      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_ascii_wctomb          14      2  Code  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  _start                             14      4  Code  Gb  SEGGER_THUMB_Startup.o
+  __SEGGER_RTL_ascii_toupper
+                                     12      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_ascii_towupper
+                                     12      2  Code  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  OS_STACK_GetSysStackBase           10      2  Code  Gb  OS_StackInfo.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  __SEGGER_RTL_stream_write          10      2  Code  Lc  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_dsub                        8      4  Code  Wk  floatasmops_arm.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  abs                                 8      2  Code  Wk  intops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  OS_TerminateError                   6      2  Code  Gb  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  __SEGGER_RTL_X_file_write           6      2  Code  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_X_file_bufsize
+                                      4      2  Code  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_float64_signbit
+                                      4      2  Code  Wk  floatops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  OS_Idle                             2      4  Code  Gb  RTOSInit_nRF5x.o
+  exit                                2      4  Code  Gb  SEGGER_THUMB_Startup.o
+  CCM_AAR_IRQHandler                         2  Code  Wk  ses_startup_nrf52840.o
+  COMP_LPCOMP_IRQHandler                     2  Code  Wk  ses_startup_nrf52840.o
+  CRYPTOCELL_IRQHandler                      2  Code  Wk  ses_startup_nrf52840.o
+  Dummy_Handler                              2  Code  Wk  ses_startup_nrf52840.o
+  ECB_IRQHandler                             2  Code  Wk  ses_startup_nrf52840.o
+  FPU_IRQHandler                             2  Code  Wk  ses_startup_nrf52840.o
+  GPIOTE_IRQHandler                          2  Code  Wk  ses_startup_nrf52840.o
+  HardFault_Handler                          4  Code  Gb  HardFaultHandler.o
+  I2S_IRQHandler                             2  Code  Wk  ses_startup_nrf52840.o
+  MWU_IRQHandler                             2  Code  Wk  ses_startup_nrf52840.o
+  NFCT_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  NMI_Handler                                2  Code  Wk  ses_startup_nrf52840.o
+  OS_StartASM                                4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_StartTask                               4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_StopASM                                 4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_Switch                                  4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_SwitchAfterISR_CortexM                  4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_SwitchFromInt                           4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  PDM_IRQHandler                             2  Code  Wk  ses_startup_nrf52840.o
+  POWER_CLOCK_IRQHandler                     2  Code  Wk  ses_startup_nrf52840.o
+  PWM0_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  PWM1_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  PWM2_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  PWM3_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  PendSV_Handler                             4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  QDEC_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  QSPI_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  RADIO_IRQHandler                           2  Code  Wk  ses_startup_nrf52840.o
+  RNG_IRQHandler                             2  Code  Wk  ses_startup_nrf52840.o
+  RTC0_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  RTC1_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  RTC2_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  Reset_Handler                              2  Code  Gb  ses_startup_nrf_common.o
+  SAADC_IRQHandler                           2  Code  Wk  ses_startup_nrf52840.o
+  SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler
+                                             2  Code  Wk  ses_startup_nrf52840.o
+  SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
+                                             2  Code  Wk  ses_startup_nrf52840.o
+  SPIM2_SPIS2_SPI2_IRQHandler
+                                             2  Code  Wk  ses_startup_nrf52840.o
+  SPIM3_IRQHandler                           2  Code  Wk  ses_startup_nrf52840.o
+  SVC_Handler                                2  Code  Wk  ses_startup_nrf52840.o
+  SWI0_EGU0_IRQHandler                       2  Code  Wk  ses_startup_nrf52840.o
+  SWI1_EGU1_IRQHandler                       2  Code  Wk  ses_startup_nrf52840.o
+  SWI2_EGU2_IRQHandler                       2  Code  Wk  ses_startup_nrf52840.o
+  SWI3_EGU3_IRQHandler                       2  Code  Wk  ses_startup_nrf52840.o
+  SWI4_EGU4_IRQHandler                       2  Code  Wk  ses_startup_nrf52840.o
+  SWI5_EGU5_IRQHandler                       2  Code  Wk  ses_startup_nrf52840.o
+  TEMP_IRQHandler                            2  Code  Wk  ses_startup_nrf52840.o
+  TIMER0_IRQHandler                          2  Code  Wk  ses_startup_nrf52840.o
+  TIMER1_IRQHandler                          2  Code  Wk  ses_startup_nrf52840.o
+  TIMER2_IRQHandler                          2  Code  Wk  ses_startup_nrf52840.o
+  TIMER3_IRQHandler                          2  Code  Wk  ses_startup_nrf52840.o
+  TIMER4_IRQHandler                          2  Code  Wk  ses_startup_nrf52840.o
+  UARTE0_UART0_IRQHandler                    2  Code  Wk  ses_startup_nrf52840.o
+  UARTE1_IRQHandler                          2  Code  Wk  ses_startup_nrf52840.o
+  WDT_IRQHandler                             2  Code  Wk  ses_startup_nrf52840.o
+  __SEGGER_init_done                         4  Code  Gb  SEGGER_THUMB_Startup.o
+  __aeabi_memclr4                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_memclr8                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_memcpy                             4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_memcpy4                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_memcpy8                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_memset                             4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_memset4                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __aeabi_memset8                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __startup_complete                         4  Code  Gb  SEGGER_THUMB_Startup.o
+  memset                                     4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  nRFInitialize                              4  Code  Gb  ses_startup_nrf52840.o
+  reset_handler                              2  Code  Gb  ses_startup_nrf_common.o
+
+Read-write data symbols by name:
+
+  Symbol name                   Address        Size  Align  Type  Bd  Object File
+  -------------------------  ----------  ----------  -----  ----  --  -----------
+  HardFaultRegs              0x20000128          68      4  Zero  Lc  SEGGER_HardFaultHandler.o
+  IntsPerTimeUnit            0x20000628           4      4  Init  Gb  OS_SysTick.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  JLINKMEM_Process._TxTimeout
+                             0x200001E8           4      4  Zero  Lc  JLINKMEM_Process.o
+  OS_Global                  0x20000000         128      8  Zero  Gb  OS_Global.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_SysTimer_Settings       0x2000016C          48      4  Zero  Gb  OS_Global.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  SEGGER_SYSVIEW_TickCnt     0x200001E4           4      4  Zero  Gb  SEGGER_SYSVIEW.o
+  SystemCoreClock            0x20000624           4      4  Init  Gb  system_nrf52840.o
+  TicksPerTimeUnit           0x20000620           4      4  Init  Gb  OS_SysTick.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  _BaseAddr                  0x200001E0           4      4  Zero  Lc  JLINKMEM_Process.o
+  _Continue                  0x200001DC           4      4  Zero  Lc  SEGGER_HardFaultHandler.o
+  _IsInited                  0x200001D8           4      4  Zero  Lc  JLINKMEM_Process.o
+  _OS_ProfilingExTime        0x200001D4           4      4  Zero  Lc  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  _SEGGER_RTT                0x20000080         168      4  Zero  Gb  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  _TxBufLocked               0x200001D0           4      4  Zero  Lc  JLINKMEM_Process.o
+  _TxIsPending               0x200001CC           4      4  Zero  Lc  JLINKMEM_Process.o
+  _TxPendingData             0x200005FC           1         Zero  Lc  JLINKMEM_Process.o
+  _TxTimeoutTimer            0x200001C8           4      4  Zero  Lc  JLINKMEM_Process.o
+  __RAL_global_locale        0x20000600          20      4  Init  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_global_locale
+                             0x20000600          20      4  Init  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_heap_globals.0
+                             0x200001AC           4      4  Zero  Lc  heapops_basic.o (heapops_basic_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_locale_ptr    0x200001A8           4      4  Zero  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_stderr_file   0x200001A4           4      4  Zero  Lc  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_stdin_file    0x200001A0           4      4  Zero  Lc  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_stdout_file   0x2000019C           4      4  Zero  Lc  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  _acDownBuffer              0x200005EC          16         Zero  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  _acUpBuffer                0x200001EC       1 024         Zero  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  _pRxBuf                    0x200001C4           4      4  Zero  Lc  JLINKMEM_Process.o
+  _pTxBuf                    0x200001C0           4      4  Zero  Lc  JLINKMEM_Process.o
+  _pfGetNextChar             0x200001BC           4      4  Zero  Lc  JLINKMEM_Process.o
+  _pfOnRx                    0x200001B8           4      4  Zero  Lc  JLINKMEM_Process.o
+  _pfOnTx                    0x200001B4           4      4  Zero  Lc  JLINKMEM_Process.o
+  _pfUSBISRHandler           0x200001B0           4      4  Zero  Lc  BSP_USB.o
+  stderr                     0x2000061C           4      4  Init  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  stdin                      0x20000618           4      4  Init  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  stdout                     0x20000614           4      4  Init  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+
+Read-write data symbols by address:
+
+     Address  Symbol name                      Size  Align  Type  Bd  Object File
+  ----------  -------------------------  ----------  -----  ----  --  -----------
+  0x20000000  OS_Global                         128      8  Zero  Gb  OS_Global.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x20000080  _SEGGER_RTT                       168      4  Zero  Gb  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x20000128  HardFaultRegs                      68      4  Zero  Lc  SEGGER_HardFaultHandler.o
+  0x2000016C  OS_SysTimer_Settings               48      4  Zero  Gb  OS_Global.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x2000019C  __SEGGER_RTL_stdout_file            4      4  Zero  Lc  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x200001A0  __SEGGER_RTL_stdin_file             4      4  Zero  Lc  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x200001A4  __SEGGER_RTL_stderr_file            4      4  Zero  Lc  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x200001A8  __SEGGER_RTL_locale_ptr             4      4  Zero  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x200001AC  __SEGGER_RTL_heap_globals.0
+                                                  4      4  Zero  Lc  heapops_basic.o (heapops_basic_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x200001B0  _pfUSBISRHandler                    4      4  Zero  Lc  BSP_USB.o
+  0x200001B4  _pfOnTx                             4      4  Zero  Lc  JLINKMEM_Process.o
+  0x200001B8  _pfOnRx                             4      4  Zero  Lc  JLINKMEM_Process.o
+  0x200001BC  _pfGetNextChar                      4      4  Zero  Lc  JLINKMEM_Process.o
+  0x200001C0  _pTxBuf                             4      4  Zero  Lc  JLINKMEM_Process.o
+  0x200001C4  _pRxBuf                             4      4  Zero  Lc  JLINKMEM_Process.o
+  0x200001C8  _TxTimeoutTimer                     4      4  Zero  Lc  JLINKMEM_Process.o
+  0x200001CC  _TxIsPending                        4      4  Zero  Lc  JLINKMEM_Process.o
+  0x200001D0  _TxBufLocked                        4      4  Zero  Lc  JLINKMEM_Process.o
+  0x200001D4  _OS_ProfilingExTime                 4      4  Zero  Lc  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x200001D8  _IsInited                           4      4  Zero  Lc  JLINKMEM_Process.o
+  0x200001DC  _Continue                           4      4  Zero  Lc  SEGGER_HardFaultHandler.o
+  0x200001E0  _BaseAddr                           4      4  Zero  Lc  JLINKMEM_Process.o
+  0x200001E4  SEGGER_SYSVIEW_TickCnt              4      4  Zero  Gb  SEGGER_SYSVIEW.o
+  0x200001E8  JLINKMEM_Process._TxTimeout
+                                                  4      4  Zero  Lc  JLINKMEM_Process.o
+  0x200001EC  _acUpBuffer                     1 024         Zero  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x200005EC  _acDownBuffer                      16         Zero  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x200005FC  _TxPendingData                      1         Zero  Lc  JLINKMEM_Process.o
+  0x20000600  __SEGGER_RTL_global_locale
+                                                 20      4  Init  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x20000600  __RAL_global_locale                20      4  Init  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x20000614  stdout                              4      4  Init  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x20000618  stdin                               4      4  Init  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x2000061C  stderr                              4      4  Init  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x20000620  TicksPerTimeUnit                    4      4  Init  Gb  OS_SysTick.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x20000624  SystemCoreClock                     4      4  Init  Gb  system_nrf52840.o
+  0x20000628  IntsPerTimeUnit                     4      4  Init  Gb  OS_SysTick.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+
+Read-write data symbols by descending size:
+
+  Symbol name                      Size  Align  Type  Bd  Object File
+  -------------------------  ----------  -----  ----  --  -----------
+  _acUpBuffer                     1 024         Zero  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  _SEGGER_RTT                       168      4  Zero  Gb  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  OS_Global                         128      8  Zero  Gb  OS_Global.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  HardFaultRegs                      68      4  Zero  Lc  SEGGER_HardFaultHandler.o
+  OS_SysTimer_Settings               48      4  Zero  Gb  OS_Global.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  __RAL_global_locale                20      4  Init  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_global_locale
+                                     20      4  Init  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  _acDownBuffer                      16         Zero  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  IntsPerTimeUnit                     4      4  Init  Gb  OS_SysTick.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  JLINKMEM_Process._TxTimeout
+                                      4      4  Zero  Lc  JLINKMEM_Process.o
+  SEGGER_SYSVIEW_TickCnt              4      4  Zero  Gb  SEGGER_SYSVIEW.o
+  SystemCoreClock                     4      4  Init  Gb  system_nrf52840.o
+  TicksPerTimeUnit                    4      4  Init  Gb  OS_SysTick.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  _BaseAddr                           4      4  Zero  Lc  JLINKMEM_Process.o
+  _Continue                           4      4  Zero  Lc  SEGGER_HardFaultHandler.o
+  _IsInited                           4      4  Zero  Lc  JLINKMEM_Process.o
+  _OS_ProfilingExTime                 4      4  Zero  Lc  OS_Kern.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  _TxBufLocked                        4      4  Zero  Lc  JLINKMEM_Process.o
+  _TxIsPending                        4      4  Zero  Lc  JLINKMEM_Process.o
+  _TxTimeoutTimer                     4      4  Zero  Lc  JLINKMEM_Process.o
+  __SEGGER_RTL_heap_globals.0
+                                      4      4  Zero  Lc  heapops_basic.o (heapops_basic_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_locale_ptr             4      4  Zero  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_stderr_file            4      4  Zero  Lc  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_stdin_file             4      4  Zero  Lc  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_stdout_file            4      4  Zero  Lc  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  _pRxBuf                             4      4  Zero  Lc  JLINKMEM_Process.o
+  _pTxBuf                             4      4  Zero  Lc  JLINKMEM_Process.o
+  _pfGetNextChar                      4      4  Zero  Lc  JLINKMEM_Process.o
+  _pfOnRx                             4      4  Zero  Lc  JLINKMEM_Process.o
+  _pfOnTx                             4      4  Zero  Lc  JLINKMEM_Process.o
+  _pfUSBISRHandler                    4      4  Zero  Lc  BSP_USB.o
+  stderr                              4      4  Init  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  stdin                               4      4  Init  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  stdout                              4      4  Init  Gb  prinops_rtt.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  _TxPendingData                      1         Zero  Lc  JLINKMEM_Process.o
+
+Read-only data symbols by name:
+
+  Symbol name                   Address        Size  Align  Type  Bd  Object File
+  -------------------------  ----------  ----------  -----  ----  --  -----------
+  OS_JLINKMEM_BufferSize     0x00002478           4      4  Cnst  Gb  RTOSInit_nRF5x.o
+  _DoInit._aInitStr          0x00003C50          17         Cnst  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_aPower2       0x000004F8          72      8  Cnst  Lc  utilops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_ascii_ctype_map
+                             0x00003DD0         128         Cnst  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_ascii_ctype_mask
+                             0x00003CCB          13         Cnst  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_c_locale      0x0000247C          12      4  Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_c_locale_abbrev_day_names
+                             0x00003C7C          29         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_c_locale_abbrev_month_names
+                             0x00003C99          49         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_c_locale_am_pm_indicator
+                             0x00003AD2           7         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_c_locale_data
+                             0x000024A8          88      4  Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_c_locale_date_format
+                             0x00003C6A           9         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_c_locale_date_time_format
+                             0x00003AD9          15         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_c_locale_day_names
+                             0x00003B78          58         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_c_locale_month_names
+                             0x00003A7B          87         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_c_locale_time_format
+                             0x00003C73           9         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_codeset_ascii
+                             0x00002488          32      4  Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_data_empty_string
+                             0x00003CCA           1         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_data_utf8_period
+                             0x00003BB4           2         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_hex_lc        0x00003DB8          16         Cnst  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_hex_uc        0x00003DA8          16         Cnst  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_RTL_ipow10        0x00000540         160      8  Cnst  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  __SEGGER_init_data__       0x00003E9C        [44]      4  Cnst  Lc  [ Linker created ]
+  __SEGGER_init_table__      0x00003E74        [40]      4  Cnst  Lc  [ Linker created ]
+
+Read-only data symbols by address:
+
+     Address  Symbol name                      Size  Align  Type  Bd  Object File
+  ----------  -------------------------  ----------  -----  ----  --  -----------
+  0x000004F8  __SEGGER_RTL_aPower2               72      8  Cnst  Lc  utilops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00000540  __SEGGER_RTL_ipow10               160      8  Cnst  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00002478  OS_JLINKMEM_BufferSize              4      4  Cnst  Gb  RTOSInit_nRF5x.o
+  0x0000247C  __SEGGER_RTL_c_locale              12      4  Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00002488  __SEGGER_RTL_codeset_ascii
+                                                 32      4  Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x000024A8  __SEGGER_RTL_c_locale_data
+                                                 88      4  Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003A7B  __SEGGER_RTL_c_locale_month_names
+                                                 87         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003AD2  __SEGGER_RTL_c_locale_am_pm_indicator
+                                                  7         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003AD9  __SEGGER_RTL_c_locale_date_time_format
+                                                 15         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003B78  __SEGGER_RTL_c_locale_day_names
+                                                 58         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003BB4  __SEGGER_RTL_data_utf8_period
+                                                  2         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003C50  _DoInit._aInitStr                  17         Cnst  Lc  SEGGER_RTT.o (prinops_rtt_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003C6A  __SEGGER_RTL_c_locale_date_format
+                                                  9         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003C73  __SEGGER_RTL_c_locale_time_format
+                                                  9         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003C7C  __SEGGER_RTL_c_locale_abbrev_day_names
+                                                 29         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003C99  __SEGGER_RTL_c_locale_abbrev_month_names
+                                                 49         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003CCA  __SEGGER_RTL_data_empty_string
+                                                  1         Cnst  Gb  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003CCB  __SEGGER_RTL_ascii_ctype_mask
+                                                 13         Cnst  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003DA8  __SEGGER_RTL_hex_uc                16         Cnst  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003DB8  __SEGGER_RTL_hex_lc                16         Cnst  Gb  prinops.o (libc_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003DD0  __SEGGER_RTL_ascii_ctype_map
+                                                128         Cnst  Lc  mbops.o (mbops_timeops_v7em_fpv4_sp_d16_t_le_eabi_balanced.a)
+  0x00003E74  __SEGGER_init_table__            [40]      4  Cnst  Lc  [ Linker created ]
+  0x00003E9C  __SEGGER_init_data__             [44]      4  Cnst  Lc  [ Linker created ]
+
+Untyped symbols by name:
+
+  Symbol name                     Value        Size  Align  Type  Bd  Object File
+  -------------------------  ----------  ----------  -----  ----  --  -----------
+  Loop                       0x00002638                  4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  OS_Switch_End              0x00002672                  4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  RestoreCooperative         0x000025C0                  4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  RestorePreemptive          0x000025B8                  4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  SaveCompletedCM4F          0x00002588                  4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  SaveRegs                   0x0000256A                  4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  SkipSaveMainContext        0x0000260A                  4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  Skip_VFPRestore            0x000025A6                  4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  Skip_VFPSave               0x0000257C                  4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  StartIdleCM4F              0x000025C2                  4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  __CODE_RAM1_segment_end__  0x00840000                     ----  Gb  [ Linker created ]
+  __CODE_RAM1_segment_size__
+                             0x00040000                     ----  Gb  [ Linker created ]
+  __CODE_RAM1_segment_start__
+                             0x00800000                     ----  Gb  [ Linker created ]
+  __CODE_RAM1_segment_used_end__
+                             0x00800000                     ----  Gb  [ Linker created ]
+  __CODE_RAM1_segment_used_size__
+                             0x00000000                     ----  Gb  [ Linker created ]
+  __CODE_RAM1_segment_used_start__
+                             0x00800000                     ----  Gb  [ Linker created ]
+  __EXTFLASH1_segment_end__  0x1A000000                     ----  Gb  [ Linker created ]
+  __EXTFLASH1_segment_size__
+                             0x08000000                     ----  Gb  [ Linker created ]
+  __EXTFLASH1_segment_start__
+                             0x12000000                     ----  Gb  [ Linker created ]
+  __EXTFLASH1_segment_used_end__
+                             0x12000000                     ----  Gb  [ Linker created ]
+  __EXTFLASH1_segment_used_size__
+                             0x00000000                     ----  Gb  [ Linker created ]
+  __EXTFLASH1_segment_used_start__
+                             0x12000000                     ----  Gb  [ Linker created ]
+  __FLASH1_segment_end__     0x00100000                     ----  Gb  [ Linker created ]
+  __FLASH1_segment_size__    0x00100000                     ----  Gb  [ Linker created ]
+  __FLASH1_segment_start__   0x00000000                     ----  Gb  [ Linker created ]
+  __FLASH1_segment_used_end__
+                             0x00003EEE                     ----  Gb  [ Linker created ]
+  __FLASH1_segment_used_size__
+                             0x00003EEE                     ----  Gb  [ Linker created ]
+  __FLASH1_segment_used_start__
+                             0x00000000                     ----  Gb  [ Linker created ]
+  __FLASH_segment_end__      0x00100000                     ----  Gb  [ Linker created ]
+  __FLASH_segment_size__     0x00100000                     ----  Gb  [ Linker created ]
+  __FLASH_segment_start__    0x00000000                     ----  Gb  [ Linker created ]
+  __FLASH_segment_used_end__
+                             0x00003EEE                     ----  Gb  [ Linker created ]
+  __FLASH_segment_used_size__
+                             0x00003EEE                     ----  Gb  [ Linker created ]
+  __FLASH_segment_used_start__
+                             0x00000000                     ----  Gb  [ Linker created ]
+  __HEAPSIZE__               0x00000500                     ----  Gb  [ Linker created ]
+  __RAM1_segment_end__       0x20040000                     ----  Gb  [ Linker created ]
+  __RAM1_segment_size__      0x00040000                     ----  Gb  [ Linker created ]
+  __RAM1_segment_start__     0x20000000                     ----  Gb  [ Linker created ]
+  __RAM1_segment_used_end__  0x20040000                     ----  Gb  [ Linker created ]
+  __RAM1_segment_used_size__
+                             0x00040000                     ----  Gb  [ Linker created ]
+  __RAM1_segment_used_start__
+                             0x20000000                     ----  Gb  [ Linker created ]
+  __RAM_segment_end__        0x20040000                     ----  Gb  [ Linker created ]
+  __RAM_segment_size__       0x00040000                     ----  Gb  [ Linker created ]
+  __RAM_segment_start__      0x20000000                     ----  Gb  [ Linker created ]
+  __RAM_segment_used_end__   0x20040000                     ----  Gb  [ Linker created ]
+  __RAM_segment_used_size__  0x00040000                     ----  Gb  [ Linker created ]
+  __RAM_segment_used_start__
+                             0x20000000                     ----  Gb  [ Linker created ]
+  __STACKSIZE_PROCESS__      0x00000000                     ----  Gb  [ Linker created ]
+  __STACKSIZE__              0x00000400                     ----  Gb  [ Linker created ]
+  __ctors_end__              0x00003CDC                     ----  Gb  [ Linker created ]
+  __ctors_start__            0x00003CD8                     ----  Gb  [ Linker created ]
+  __heap_end__               0x20000B30                     ----  Gb  [ Linker created ]
+  __heap_start__             0x20000630                     ----  Gb  [ Linker created ]
+  __stack_end__              0x20040000                     ----  Gb  [ Linker created ]
+  __stack_start__            0x2003FC00                     ----  Gb  [ Linker created ]
+  __thread_pointer$          0x00000000                     ----  Gb  [ Linker created ]
+  _vectors                   0x00000000       [512]    512  Code  Gb  ses_startup_nrf52840.o
+  _vectors_end               0x00000200                512  Code  Lc  ses_startup_nrf52840.o
+
+Untyped symbols by address:
+
+       Value  Symbol name                      Size  Align  Type  Bd  Object File
+  ----------  -------------------------  ----------  -----  ----  --  -----------
+  0x00000000  _vectors                        [512]    512  Code  Gb  ses_startup_nrf52840.o
+  0x00000000  __thread_pointer$                             ----  Gb  [ Linker created ]
+  0x00000000  __STACKSIZE_PROCESS__                         ----  Gb  [ Linker created ]
+  0x00000000  __FLASH_segment_used_start__
+                                                            ----  Gb  [ Linker created ]
+  0x00000000  __FLASH_segment_start__                       ----  Gb  [ Linker created ]
+  0x00000000  __FLASH1_segment_used_start__
+                                                            ----  Gb  [ Linker created ]
+  0x00000000  __FLASH1_segment_start__                      ----  Gb  [ Linker created ]
+  0x00000000  __EXTFLASH1_segment_used_size__
+                                                            ----  Gb  [ Linker created ]
+  0x00000000  __CODE_RAM1_segment_used_size__
+                                                            ----  Gb  [ Linker created ]
+  0x00000200  _vectors_end                             512  Code  Lc  ses_startup_nrf52840.o
+  0x00000400  __STACKSIZE__                                 ----  Gb  [ Linker created ]
+  0x00000500  __HEAPSIZE__                                  ----  Gb  [ Linker created ]
+  0x0000256A  SaveRegs                                   4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x0000257C  Skip_VFPSave                               4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x00002588  SaveCompletedCM4F                          4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x000025A6  Skip_VFPRestore                            4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x000025B8  RestorePreemptive                          4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x000025C0  RestoreCooperative                         4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x000025C2  StartIdleCM4F                              4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x0000260A  SkipSaveMainContext                        4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x00002638  Loop                                       4  Code  Lc  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x00002672  OS_Switch_End                              4  Code  Gb  RTOS_CM4F.o (libos_v7em_fpv4_sp_d16_t_le_eabi_balanced_dp.a)
+  0x00003CD8  __ctors_start__                               ----  Gb  [ Linker created ]
+  0x00003CDC  __ctors_end__                                 ----  Gb  [ Linker created ]
+  0x00003EEE  __FLASH_segment_used_size__
+                                                            ----  Gb  [ Linker created ]
+  0x00003EEE  __FLASH_segment_used_end__
+                                                            ----  Gb  [ Linker created ]
+  0x00003EEE  __FLASH1_segment_used_size__
+                                                            ----  Gb  [ Linker created ]
+  0x00003EEE  __FLASH1_segment_used_end__
+                                                            ----  Gb  [ Linker created ]
+  0x00040000  __RAM_segment_used_size__                     ----  Gb  [ Linker created ]
+  0x00040000  __RAM_segment_size__                          ----  Gb  [ Linker created ]
+  0x00040000  __RAM1_segment_used_size__
+                                                            ----  Gb  [ Linker created ]
+  0x00040000  __RAM1_segment_size__                         ----  Gb  [ Linker created ]
+  0x00040000  __CODE_RAM1_segment_size__
+                                                            ----  Gb  [ Linker created ]
+  0x00100000  __FLASH_segment_size__                        ----  Gb  [ Linker created ]
+  0x00100000  __FLASH_segment_end__                         ----  Gb  [ Linker created ]
+  0x00100000  __FLASH1_segment_size__                       ----  Gb  [ Linker created ]
+  0x00100000  __FLASH1_segment_end__                        ----  Gb  [ Linker created ]
+  0x00800000  __CODE_RAM1_segment_used_start__
+                                                            ----  Gb  [ Linker created ]
+  0x00800000  __CODE_RAM1_segment_used_end__
+                                                            ----  Gb  [ Linker created ]
+  0x00800000  __CODE_RAM1_segment_start__
+                                                            ----  Gb  [ Linker created ]
+  0x00840000  __CODE_RAM1_segment_end__                     ----  Gb  [ Linker created ]
+  0x08000000  __EXTFLASH1_segment_size__
+                                                            ----  Gb  [ Linker created ]
+  0x12000000  __EXTFLASH1_segment_used_start__
+                                                            ----  Gb  [ Linker created ]
+  0x12000000  __EXTFLASH1_segment_used_end__
+                                                            ----  Gb  [ Linker created ]
+  0x12000000  __EXTFLASH1_segment_start__
+                                                            ----  Gb  [ Linker created ]
+  0x1A000000  __EXTFLASH1_segment_end__                     ----  Gb  [ Linker created ]
+  0x20000000  __RAM_segment_used_start__
+                                                            ----  Gb  [ Linker created ]
+  0x20000000  __RAM_segment_start__                         ----  Gb  [ Linker created ]
+  0x20000000  __RAM1_segment_used_start__
+                                                            ----  Gb  [ Linker created ]
+  0x20000000  __RAM1_segment_start__                        ----  Gb  [ Linker created ]
+  0x20000630  __heap_start__                                ----  Gb  [ Linker created ]
+  0x20000B30  __heap_end__                                  ----  Gb  [ Linker created ]
+  0x2003FC00  __stack_start__                               ----  Gb  [ Linker created ]
+  0x20040000  __stack_end__                                 ----  Gb  [ Linker created ]
+  0x20040000  __RAM_segment_used_end__                      ----  Gb  [ Linker created ]
+  0x20040000  __RAM_segment_end__                           ----  Gb  [ Linker created ]
+  0x20040000  __RAM1_segment_used_end__                     ----  Gb  [ Linker created ]
+  0x20040000  __RAM1_segment_end__                          ----  Gb  [ Linker created ]
+
+
+***********************************************************************************************
+***                                                                                         ***
+***                                      LINK SUMMARY                                       ***
+***                                                                                         ***
+***********************************************************************************************
+
+Memory breakdown:
+
+   14 582 bytes read-only  code    + 
+    1 524 bytes read-only  data    =  16 106 bytes read-only (total)
+    3 881 bytes read-write data
+
+Region summary:
+
+  Name        Range                     Size                 Used               Unused       Alignment Loss
+  ----------  -----------------  -----------  -------------------  -------------------  -------------------
+  FLASH       00000000-000fffff    1 048 576       16 110   1.54%    1 032 466  98.46%            0   0.00%
+  RAM         20000000-2003ffff      262 144        3 881   1.48%      258 263  98.52%            0   0.00%
+
+Link complete: 0 errors, 0 warnings, 0 remarks

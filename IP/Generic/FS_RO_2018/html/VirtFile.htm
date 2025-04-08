@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>SEGGER Webserver demo</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap_min_css.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="Custom.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <!--            -->
+      <!-- Navigation -->
+      <!--            -->
+      <nav class="navbar navbar-light bg-faded rounded navbar-toggleable-md" id="navigation">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#containerNavbar" aria-controls="containerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <span class="navbar-brand" id="brand">emWeb |</span>
+        <div class="collapse navbar-collapse" id="containerNavbar">
+          <ul class="navbar-nav mr-auto" id="navList">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.htm">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <!--#exec cgi="GetConfigMenuItem"-->
+            <li class="nav-item dropdown">
+              <!--#exec cgi="GetDropdown"-->
+            </li>
+          </ul>
+          <div class="navbar-text" id="LOG_SysUptime"></div>          
+          <!--          
+          <form class="form-inline my-2 my-sm-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          -->          
+        </div>
+      </nav>
+      <!--         -->
+      <!-- Content -->
+      <!--         -->      
+      <div class="jumbotron jumbotron-fluid" id="contentMain">
+        <div class="row" id="row01">
+          <div class="col-sm-4 mx-auto" id="prodLogo">
+            <img src="emWeb_Logo.png" class="img-responsive" alt="emWeb product logo">
+          </div> <!-- prodLogo -->
+          <div class="col-sm-8">
+            <div class="textBlock">
+              <h2>Enter your name and press button</h2>
+            </div>
+            <div class="textBlock">              
+              <form action="Send.cgi" method="GET">
+                <div class="row">                
+                  <div class="col-sm-3">
+                    <label for="FirstName">First name:</label>
+                    <br><label for="LastName">Last name:</label>
+                  </div>
+                  <div class="col-sm-9">                  
+                    <input name="FirstName" type="text" size="30" maxlength="30" value="<!--#exec cgi="FirstName"-->">
+                    <input name="LastName"  type="text" size="30" maxlength="30" value="<!--#exec cgi="LastName"-->">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <input type="submit" value="Change">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="textBlock">
+                  Pressing the button submits the entered strings to the emWeb Web server. The Web server parses the strings, generates a new "virtual" Web page and sends it back to the browser.
+                </div>
+              </div>
+            </div>
+          </div> <!-- col-sm-8 -->
+        </div>  <!-- row01 -->
+        <script>
+          if(typeof(EventSource) !== "undefined") {
+            var conn = new EventSource("MaintenanceInfo.cgi");
+            //
+            //
+            //
+            function _ShowSSEUpdates(event) {
+              document.getElementById("LOG_SSEUpdates").innerHTML = event.data;
+            };
+            function _ShowSysUptime(event) {
+              document.getElementById("LOG_SysUptime").innerHTML = event.data;
+            };
+            //
+            //
+            //
+            conn.addEventListener('LOG_SSEUpdates',     _ShowSSEUpdates);
+            conn.addEventListener('LOG_SysUptime',      _ShowSysUptime);
+          } else {
+            document.getElementById("LOG_ConnectionInfo").innerHTML = "Sorry, your browser does not support Server-Sent Events (SSE)...";
+          }
+        </script>
+
+        <div class="row">
+          <div class="col-sm-6" id="footer">
+            <img src="Logo.gif"  class="img-responsive" alt="SEGGER company logo">
+          </div> <!-- Logo -->
+          <div class="col-sm-6 text-right" id="footer">
+            <!--#exec cgi="Counter"-->
+            <br><span class="hint" id="LOG_SSEUpdates"></span>
+          </div> <!-- footer -->
+        </div>  <!-- row -->
+      </div> <!-- Jumbotron -->
+    </div> <!-- container -->      
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery_min_js.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery_min_js.js"><\/script>')</script>
+    <script src="js/tether_min_js.js"></script>
+    <script src="js/bootstrap_min_js.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<!--    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>  -->
+  </body>
+</html>
