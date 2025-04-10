@@ -19,120 +19,131 @@ Purpose : Generic SEGGER application start
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <time.h>
-#include <nrf.h>              
-#include <nrfx_uart.h>        
+#include <nrf.h>
+#include <nrfx_uart.h>
 #include <core_cm4.h>
-#include <nrfx_uart.h>  
-#include <nrf.h>         
-
-
-#define MAX_RETRIES 3
-#define RETRY_DELAY_MS 2000
-
 
 #define UART_TX_PIN 6
 #define UART_RX_PIN 8
-
-// UART configuration
 #define UART_BAUD_RATE NRF_UART_BAUDRATE_115200
-#define UART_RXD_READY_Msk (1UL << NRF_UART_EVENT_RXDRDY) 
+
+#define MAX_RETRIES 3
+#define RETRY_DELAY_MS 2000
+#define SERVER_URL "example.com"      
+#define SERVER_PORT 443              
+#define HTTPS 1                       
+#define API_PATH "/api/telemetry"     
 
 
-// Function prototypes
+nrfx_uart_config_t uart_config = NRFX_UART_DEFAULT_CONFIG;
+
+// Define the UART instance
+#define NRFX_UART0_INSTANCE   NRF_UART0
+
+
+void uart_init(void);
 static bool uart_send_command(const char *cmd, char *response, size_t response_size);
 static bool check_sim_status(void);
 static bool connect_network(void);
-static void disconnect_network(void);
 static bool send_telemetry(void);
-static void delay_ms(int ms);
 static void manage_connection(void);
-void uart_init(void);  
+static void delay_ms(int ms);
 
-
-
-// UART initialization
+// UART Initialization
 void uart_init(void) {
-    nrfx_uart_config_t config = NRFX_UART_DEFAULT_CONFIG;
-    config.baudrate = NRF_UART_BAUDRATE_115200;
-    config.hwfc = NRF_UART_HWFC_DISABLED;
-    config.parity = NRF_UART_PARITY_EXCLUDED;
+    uart_config.baudrate = UART_BAUD_RATE;
+    uart_config.hwfc = NRF_UART_HWFC_DISABLED;
+    uart_config.parity = NRF_UART_PARITY_EXCLUDED;
+
+    
+    nrfx_uart_init(NRFX_UART0_INSTANCE, &uart_config, NULL);
 }
 
-// Send AT command 
+// Send AT command and get response
 bool uart_send_command(const char *cmd, char *response, size_t response_size) {
+    printf("[UART] Sending command: %s\n", cmd);
+    nrfx_uart_tx(NRFX_UART0_INSTANCE, (const uint8_t*)cmd, strlen(cmd));
+    nrfx_uart_tx(NRFX_UART0_INSTANCE, (const uint8_t*)"\r\n", 2); // Send a newline after the command
     
-    NRF_UART0->TXD = *cmd;  
-    
-        int i = 0;
-    while (i < response_size && (NRF_UART0->RXD & UART_RXD_READY_Msk) != 0) {
-        response[i] = (char)NRF_UART0->RXD;
-        i++;
+    int i = 0;
+    while (i < (int)response_size) {
+        if (nrfx_uart_rx(NRFX_UART0_INSTANCE, (uint8_t*)&response[i], 1) == NRFX_SUCCESS) {
+            if (response[i] == '\n') break;  // Stop on newline
+            i++;
+        }
     }
-
-    response[i] = '\0';
-    printf("[UART] Sent: %s\n", cmd);
+    response[i] = '\0';  
     printf("[UART] Response: %s\n", response);
     return true;
 }
-
-// Check SIM status
-bool check_sim_status() {
+// Check SIM card status
+bool check_sim_status(void) {
     char response[256];
-    uart_send_command("AT+CCID", response, sizeof(response));
-    return strstr(response, "+CCID") != NULL;
+    uart_send_command("AT#XCCID", response, sizeof(response));  // Check SIM status
+    if (strstr(response, "+CCID") == NULL) {
+        printf("[ERROR] SIM card not detected\n");
+        return false;
+    }
+    return true;
 }
 
 // Connect to the network
-bool connect_network() {
+bool connect_network(void) {
     char response[256];
-    uart_send_command("AT+COPS=0", response, sizeof(response));
-    uart_send_command("AT+CGATT=1", response, sizeof(response));
-    uart_send_command("AT+CGACT=1,1", response, sizeof(response));
-    uart_send_command("AT+CEREG?", response, sizeof(response));
-    return strstr(response, "+CEREG: 1") != NULL;
+
+    // Check SIM card 
+    if (!check_sim_status()) {
+        return false;
+    }
+
+    // Attach to GPRS
+    uart_send_command("AT#XCGATT=1", response, sizeof(response));
+    if (strstr(response, "OK") == NULL) {
+        printf("[ERROR] Failed to attach to the network\n");
+        return false;
+    }
+
+    // Automatic operator selection
+    uart_send_command("AT#XCOPS=0", response, sizeof(response));  
+    uart_send_command("AT#XCOPS=1", response, sizeof(response));  // Register to network
+    return true;
 }
 
-// Disconnect from the network
-void disconnect_network() {
+// Send HTTP connection request
+bool send_telemetry(void) {
     char response[256];
-    uart_send_command("AT+CGATT=0", response, sizeof(response));
-    uart_send_command("AT+CGACT=0,1", response, sizeof(response));
-    uart_send_command("AT+COPS=2", response, sizeof(response));
-}
+    char cmd[512];  
 
-// Send telemetry data
-bool send_telemetry() {
-    char response[256];
-    uart_send_command("AT+HTTPINIT", response, sizeof(response));
-    uart_send_command("AT+HTTPPARA=\"CID\",1", response, sizeof(response));
-    uart_send_command("AT+HTTPPARA=\"URL\",\"https://eok6huncgyppkot.m.pipedream.net\"", response, sizeof(response));
-    uart_send_command("AT+HTTPDATA=50,5000", response, sizeof(response));
-    uart_send_command("{\"people_counting\":25}", response, sizeof(response));
+    // connect to the HTTP server
+    snprintf(cmd, sizeof(cmd), "AT#XHTTPCCON=\"%s\", %d, %d", SERVER_URL, SERVER_PORT, HTTPS);
+
+    // Send the HTTP connection 
+    uart_send_command(cmd, response, sizeof(response));
+    if (strstr(response, "OK") == NULL) {
+        printf("[ERROR] HTTP connection failed\n");
+        return false;
+    }
+
+    //  HTTP POST request
+    const char *body = "{\"count\":60}";  
+    size_t body_length = strlen(body);
+    char header[256];
+    snprintf(header, sizeof(header), "POST " API_PATH " HTTP/1.1\r\nContent-Length: %zu\r\n\r\n", body_length);
+
     
-    uart_send_command("AT+HTTPACTION=1", response, sizeof(response));
-    bool success = strstr(response, "200") != NULL;
+    uart_send_command(header, response, sizeof(response)); 
+    uart_send_command(body, response, sizeof(response));    
 
-    uart_send_command("AT+HTTPTERM", response, sizeof(response));
-    return success;
+    // End the request 
+    uart_send_command("AT#XHTTPCREQ=0", response, sizeof(response));  
+    return strstr(response, "HTTP/1.1 200 OK") != NULL;
 }
 
-// Delay function
-void delay_ms(int ms) {
-    delay_ms(ms);  
-}
 
-// Manage network connection 
-void manage_connection() {
+// Manage the connection with retries
+void manage_connection(void) {
     int retries = 0;
     while (retries < MAX_RETRIES) {
-        if (!check_sim_status()) {
-            printf("[SIM] SIM check failed, retrying...\n");
-            delay_ms(RETRY_DELAY_MS);
-            retries++;
-            continue;
-        }
-
         if (connect_network()) {
             printf("[NETWORK] Connected to network.\n");
             return;
@@ -143,33 +154,43 @@ void manage_connection() {
         }
     }
 
-    printf("[SYSTEM] Too many failures. Simulate system reset.\n");
-    NVIC_SystemReset();  
+    //  system reset if network connection fails after retries
+    printf("[ERROR] Too many retries. Resetting system...\n");
+    NVIC_SystemReset();
+}
+
+// Delay function 
+void delay_ms(int ms) {
+    for (int i = 0; i < ms * 1000; i++) {
+        __NOP();  
+    }
 }
 
 int main(void) {
-    // Initialize UART 
-    NRF_UART0->BAUDRATE = UART_BAUD_RATE;
-    NRF_UART0->PSEL.TXD = UART_TX_PIN;
-    NRF_UART0->PSEL.RXD = UART_RX_PIN;
+    uart_init();  
 
+    // Try to manage the network connection and reconnect if needed
     manage_connection();
 
     while (1) {
         printf("[TELEMETRY] Sending telemetry...\n");
+
+        
         if (!send_telemetry()) {
-            printf("[ERROR] Telemetry failed! Reconnecting...\n");
-            disconnect_network();
+            printf("[ERROR] Telemetry failed. Reconnecting...\n");
             manage_connection();
         } else {
-            printf("[TELEMETRY] Success.\n");
+            printf("[TELEMETRY] Telemetry sent successfully.\n");
         }
 
-        delay_ms(10000); // Send  every 10 seconds
+        delay_ms(10000);  
     }
 
     return 0;
 }
+
+
+
 
 
 /****** End Of File *************************************************/
